@@ -4,6 +4,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
+import { indexingEnabled } from "@/config/indexing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyContact } from "@/components/layout/StickyContact";
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
     title: { default: t("siteTitle"), template: `%s · ${siteConfig.name}` },
     description: t("siteDescription"),
     applicationName: siteConfig.name,
+    ...(indexingEnabled ? {} : { robots: { index: false, follow: false } }),
   };
 }
 

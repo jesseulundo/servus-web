@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getPathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/config/site";
+import { indexingEnabled } from "@/config/indexing";
 import type { SeoCopy } from "@/content/types";
 
 type Href = Parameters<typeof getPathname>[0]["href"];
@@ -32,6 +33,6 @@ export function pageMetadata(opts: { locale: Locale; href: Href; seo: SeoCopy; n
       images: [{ url: "/og/servus-og.png", width: 1200, height: 630, alt: siteConfig.name }],
     },
     twitter: { card: "summary_large_image", title, description: seo.description, images: ["/og/servus-og.png"] },
-    robots: noindex ? { index: false, follow: true } : undefined,
+    robots: !indexingEnabled ? { index: false, follow: false } : noindex ? { index: false, follow: true } : undefined,
   };
 }

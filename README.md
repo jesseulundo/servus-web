@@ -33,3 +33,9 @@ npm run check          # typecheck + lint + tests
 - **Publish a case study:** set `publication: "approved"` in `catalog.ts`.
 - **Add a form field:** add one line in `definitions.ts` and its label in both `messages/*.json`.
 - **Add a language:** add it to `routing.ts`, then add `messages/<code>.json` and `src/content/locales/<code>.ts`, and register it in `src/content/index.ts`.
+
+## Deploying (Vercel)
+
+- Every push to `main` deploys to production; every other branch gets its own preview URL.
+- `NEXT_PUBLIC_*` variables and `SITE_INDEXING` are read at **build** time. Redeploy after changing them.
+- Keep `SITE_INDEXING` empty until launch on the real domain.
