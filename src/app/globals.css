@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Servus design tokens — from the Brand & Website Blueprint v1.0 ("Paleta principal", "Tipografia").
+ * Use the semantic Tailwind utilities (bg-navy, text-ink, font-display…) instead of raw hex values.
+ */
+@theme {
+  --color-navy: #061e2d;
+  --color-navy-800: #0b2c40;
+  --color-navy-700: #123a52;
+  --color-green: #4f8b2e;
+  /* Accessibility: white text on #4F8B2E is 4.15:1 (below WCAG AA 4.5:1).
+     Text-bearing buttons and links use green-strong (5.84:1); brand green stays for graphics. */
+  --color-green-strong: #3f7124;
+  --color-green-deep: #325a1c; /* hover/pressed */
+  --color-green-light: #b8db9f;
+  --color-orange: #d85b05; /* accent only — 3.88:1 on white, not for body text */
+  --color-orange-strong: #a84504; /* error text derived from orange — AA on white */
+  --color-mist: #eef4f3;
+  --color-ink: #24343d;
+  --color-ink-muted: #4d5f69;
+  --color-line: #d7e2e0;
+
+  --font-display: "Manrope Variable", "Aptos Display", Arial, sans-serif;
+  --font-sans: "Inter Variable", Aptos, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, monospace;
+
+  /* Blueprint: max content width between 1200 and 1280 px */
+  --container-site: 1240px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold text-navy;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  /* Visible focus for keyboard users on every interactive element */
+  :focus-visible {
+    outline: 3px solid var(--color-orange);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "siteTitle": "Servus — Tecnologia aplicada aos problemas reais do seu negócio",
+    "siteDescription": "A Servus cria produtos digitais e presta serviços de consultoria, desenvolvimento e gestão de soluções tecnológicas."
+  },
+  "a11y": {
+    "skipToContent": "Saltar para o conteúdo",
+    "mainNav": "Navegação principal",
+    "footerNav": "Navegação do rodapé",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "homeLink": "Servus — página inicial",
+    "breadcrumb": "Caminho de navegação"
+  },
+  "nav": {
+    "home": "Início",
+    "company": "Empresa",
+    "services": "Serviços",
+    "products": "Produtos",
+    "work": "Trabalhos",
+    "partnerships": "Parcerias",
+    "contact": "Contactos",
+    "privacy": "Privacidade",
+    "cta": "Falar connosco"
+  },
+  "locale": {
+    "label": "Idioma",
+    "pt": "Português",
+    "en": "English"
+  },
+  "common": {
+    "learnMore": "Saber mais",
+    "seeAll": "Ver todos",
+    "servusProduct": "A Servus product",
+    "partnerProject": "Projeto de parceiro",
+    "status": {
+      "production": "Em produção",
+      "development": "Em desenvolvimento",
+      "partner": "Projeto de parceiro"
+    },
+    "developmentNotice": "Produto em desenvolvimento. Ainda não está disponível como serviço.",
+    "draftNotice": "Conteúdo provisório — a aguardar aprovação antes da publicação.",
+    "urlPending": "Ligação pública em breve",
+    "talkToUs": "Falar com a Servus",
+    "exploreWork": "Explorar os nossos trabalhos"
+  },
+  "footer": {
+    "tagline": "Consultoria e produtos digitais. Websites, aplicações, sistemas de gestão, IA e automação.",
+    "company": "Empresa",
+    "products": "Produtos",
+    "contact": "Contactos",
+    "legal": "Legal",
+    "social": "Redes",
+    "rights": "Todos os direitos reservados."
+  },
+  "forms": {
+    "types": {
+      "service": "Pedido de serviço",
+      "partnership": "Parceria",
+      "demo": "Demonstração RH",
+      "general": "Contacto geral",
+      "support": "Suporte de produto",
+      "interest": "Lista de interesse MOAMBEIRA"
+    },
+    "intros": {
+      "service": "Conte-nos o que precisa de resolver. Respondemos com perguntas ou uma proposta de conversa de descoberta.",
+      "partnership": "Descreva a oportunidade. Quanto mais concreta, mais rápida a avaliação.",
+      "demo": "Diga-nos que módulos lhe interessam. Contactamos quando a demonstração estiver disponível.",
+      "general": "Para qualquer outro assunto.",
+      "support": "Para utilizadores do Trumuno Footy ou do Audio Cleaner. Não inclua palavras-passe.",
+      "interest": "Receba novidades quando a MOAMBEIRA abrir no seu mercado."
+    },
+    "chooseType": "Tipo de pedido",
+    "required": "obrigatório",
+    "optional": "opcional",
+    "selectPlaceholder": "Selecione…",
+    "fields": {
+      "name": "Nome",
+      "email": "Email",
+      "company": "Empresa",
+      "country": "País",
+      "need": "O que precisa de resolver?",
+      "timeline": "Prazo aproximado",
+      "budget": "Orçamento indicativo",
+      "partnershipType": "Tipo de parceria",
+      "related": "Produto ou serviço relacionado",
+      "description": "Descrição",
+      "companySize": "Dimensão da empresa",
+      "modules": "Módulos de interesse",
+      "availability": "Disponibilidade para uma conversa",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "product": "Produto",
+      "account": "Conta (email ou nome de utilizador)",
+      "supportCategory": "Categoria",
+      "interestRole": "Como quer participar?"
+    },
+    "hints": {
+      "need": "Descreva o problema e o impacto no negócio. Não inclua documentos nem dados sensíveis.",
+      "budget": "Valores indicativos em USD. Pode deixar em branco.",
+      "availability": "Ex.: manhãs, fuso horário de Luanda."
+    },
+    "options": {
+      "timeline": {
+        "asap": "O mais breve possível",
+        "1-3m": "1 a 3 meses",
+        "3-6m": "3 a 6 meses",
+        "6m+": "Mais de 6 meses",
+        "unsure": "Ainda não sei"
+      },
+      "budget": {
+        "lt5k": "Até 5 000",
+        "5-15k": "5 000 – 15 000",
+        "15-50k": "15 000 – 50 000",
+        "50k+": "Mais de 50 000",
+        "undisclosed": "Prefiro não indicar"
+      },
+      "partnershipType": {
+        "development": "Desenvolvimento para parceiro",
+        "joint-product": "Produto conjunto",
+        "distribution": "Distribuição e vendas",
+        "integration": "Integração tecnológica",
+        "campaign": "Campanha ou comunidade"
+      },
+      "companySize": {
+        "1-10": "1–10 pessoas",
+        "11-50": "11–50 pessoas",
+        "51-200": "51–200 pessoas",
+        "201-1000": "201–1000 pessoas",
+        "1000+": "Mais de 1000 pessoas"
+      },
+      "modules": {
+        "employees": "Colaboradores",
+        "attendance": "Presenças e horários",
+        "recruitment": "Recrutamento",
+        "documents-ocr": "Documentos e OCR",
+        "workflows": "Fluxos e aprovações",
+        "reports": "Relatórios"
+      },
+      "product": {
+        "trumuno-footy": "Trumuno Footy",
+        "audio-cleaner": "Audio Cleaner"
+      },
+      "supportCategory": {
+        "account": "Conta e acesso",
+        "bug": "Erro ou falha",
+        "billing": "Planos e pagamentos",
+        "feature": "Sugestão",
+        "other": "Outro"
+      },
+      "interestRole": {
+        "buyer": "Quero ser comprador",
+        "traveller": "Quero ser viajante",
+        "logistics": "Parceiro logístico"
+      }
+    },
+    "consent": "Aceito que a Servus utilize estes dados para responder ao meu pedido, de acordo com a <link>política de privacidade</link>.",
+    "submit": "Enviar pedido",
+    "sending": "A enviar…",
+    "success": {
+      "title": "Pedido recebido",
+      "body": "Obrigado. A sua referência é {reference}. Respondemos normalmente em até {days} dias úteis.",
+      "another": "Enviar outro pedido"
+    },
+    "responseDays": "2",
+    "errors": {
+      "required": "Este campo é obrigatório.",
+      "too_long": "O texto é demasiado longo.",
+      "invalid_email": "Indique um email válido, por exemplo nome@empresa.com.",
+      "invalid_option": "Escolha uma das opções.",
+      "consent_required": "Precisamos do seu consentimento para responder.",
+      "summary": "Reveja {count, plural, one {# campo} other {# campos}} assinalados.",
+      "rate_limited": "Recebemos vários pedidos seguidos. Tente novamente dentro de alguns minutos.",
+      "retry": "Não foi possível enviar. Aguarde um momento e tente novamente.",
+      "unavailable": "O envio está temporariamente indisponível. Escreva-nos para {email}.",
+      "generic": "Algo correu mal. Tente novamente ou escreva-nos para {email}."
+    }
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "body": "A página que procura não existe ou mudou de endereço.",
+    "back": "Voltar ao início"
+  }
+}

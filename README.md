@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Servus Website
 
-## Getting Started
+Corporate website for Servus, built from *Servus Guia de Marca e Website* v1.0.
+Next.js 16 · TypeScript · Tailwind CSS 4 · next-intl (PT/EN, ready for JA/FR).
 
-First, run the development server:
+See **[docs/ENGINEERING.md](docs/ENGINEERING.md)** for architecture, decisions and open questions.
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local
+npm run dev            # http://localhost:3000
+npm run check          # typecheck + lint + tests
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | What |
+|---|---|
+| `src/content/catalog.ts` | Slugs, product status, URLs, draft/approved flags |
+| `src/content/locales/*.ts` | Page copy per language (type-checked for completeness) |
+| `messages/*.json` | UI strings: nav, footer, forms, errors |
+| `src/lib/forms/definitions.ts` | All forms: fields, options, destination inbox |
+| `src/app/api/forms/[type]/route.ts` | Form endpoint (validation, spam, rate limit, delivery) |
+| `src/i18n/routing.ts` | Locales and localized URLs |
+| `src/app/globals.css` | Design tokens (brand palette, fonts) |
+| `public/brand/` | Logo variants derived from the official PNG |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Common changes
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Edit copy:** change `src/content/locales/pt.ts` and `en.ts`.
+- **Publish a case study:** set `publication: "approved"` in `catalog.ts`.
+- **Add a form field:** add one line in `definitions.ts` and its label in both `messages/*.json`.
+- **Add a language:** add it to `routing.ts`, then add `messages/<code>.json` and `src/content/locales/<code>.ts`, and register it in `src/content/index.ts`.

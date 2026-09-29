@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "siteTitle": "Servus — Technology applied to your business's real problems",
+    "siteDescription": "Servus builds digital products and provides consulting, development and management of technology solutions."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "footerNav": "Footer navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "homeLink": "Servus — home",
+    "breadcrumb": "Breadcrumb"
+  },
+  "nav": {
+    "home": "Home",
+    "company": "Company",
+    "services": "Services",
+    "products": "Products",
+    "work": "Work",
+    "partnerships": "Partnerships",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "cta": "Talk to us"
+  },
+  "locale": {
+    "label": "Language",
+    "pt": "Português",
+    "en": "English"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "seeAll": "See all",
+    "servusProduct": "A Servus product",
+    "partnerProject": "Partner project",
+    "status": {
+      "production": "Live",
+      "development": "In development",
+      "partner": "Partner project"
+    },
+    "developmentNotice": "This product is in development and is not yet available as a service.",
+    "draftNotice": "Provisional content — awaiting approval before publication.",
+    "urlPending": "Public link coming soon",
+    "talkToUs": "Talk to Servus",
+    "exploreWork": "Explore our work"
+  },
+  "footer": {
+    "tagline": "Consulting and digital products. Websites, apps, management systems, AI and automation.",
+    "company": "Company",
+    "products": "Products",
+    "contact": "Contact",
+    "legal": "Legal",
+    "social": "Social",
+    "rights": "All rights reserved."
+  },
+  "forms": {
+    "types": {
+      "service": "Service request",
+      "partnership": "Partnership",
+      "demo": "RH demo",
+      "general": "General enquiry",
+      "support": "Product support",
+      "interest": "MOAMBEIRA interest list"
+    },
+    "intros": {
+      "service": "Tell us what you need to solve. We'll reply with questions or a proposed discovery call.",
+      "partnership": "Describe the opportunity. The more specific it is, the faster we can assess it.",
+      "demo": "Tell us which modules interest you. We'll get in touch when the demo is available.",
+      "general": "For anything else.",
+      "support": "For Trumuno Footy or Audio Cleaner users. Never include passwords.",
+      "interest": "Get updates when MOAMBEIRA opens in your market."
+    },
+    "chooseType": "Request type",
+    "required": "required",
+    "optional": "optional",
+    "selectPlaceholder": "Select…",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "country": "Country",
+      "need": "What do you need to solve?",
+      "timeline": "Approximate timeline",
+      "budget": "Indicative budget",
+      "partnershipType": "Partnership type",
+      "related": "Related product or service",
+      "description": "Description",
+      "companySize": "Company size",
+      "modules": "Modules of interest",
+      "availability": "Availability for a call",
+      "subject": "Subject",
+      "message": "Message",
+      "product": "Product",
+      "account": "Account (email or username)",
+      "supportCategory": "Category",
+      "interestRole": "How would you like to take part?"
+    },
+    "hints": {
+      "need": "Describe the problem and its business impact. Please don't include documents or sensitive data.",
+      "budget": "Indicative amounts in USD. You can leave this blank.",
+      "availability": "E.g. mornings, Tokyo time zone."
+    },
+    "options": {
+      "timeline": {
+        "asap": "As soon as possible",
+        "1-3m": "1 to 3 months",
+        "3-6m": "3 to 6 months",
+        "6m+": "More than 6 months",
+        "unsure": "Not sure yet"
+      },
+      "budget": {
+        "lt5k": "Up to 5,000",
+        "5-15k": "5,000 – 15,000",
+        "15-50k": "15,000 – 50,000",
+        "50k+": "More than 50,000",
+        "undisclosed": "Prefer not to say"
+      },
+      "partnershipType": {
+        "development": "Development for a partner",
+        "joint-product": "Joint product",
+        "distribution": "Distribution and sales",
+        "integration": "Technology integration",
+        "campaign": "Campaign or community"
+      },
+      "companySize": {
+        "1-10": "1–10 people",
+        "11-50": "11–50 people",
+        "51-200": "51–200 people",
+        "201-1000": "201–1000 people",
+        "1000+": "More than 1000 people"
+      },
+      "modules": {
+        "employees": "Employees",
+        "attendance": "Attendance and schedules",
+        "recruitment": "Recruitment",
+        "documents-ocr": "Documents and OCR",
+        "workflows": "Workflows and approvals",
+        "reports": "Reports"
+      },
+      "product": {
+        "trumuno-footy": "Trumuno Footy",
+        "audio-cleaner": "Audio Cleaner"
+      },
+      "supportCategory": {
+        "account": "Account and access",
+        "bug": "Bug or failure",
+        "billing": "Plans and payments",
+        "feature": "Suggestion",
+        "other": "Other"
+      },
+      "interestRole": {
+        "buyer": "I want to be a buyer",
+        "traveller": "I want to be a traveller",
+        "logistics": "Logistics partner"
+      }
+    },
+    "consent": "I agree that Servus may use this data to respond to my request, in line with the <link>privacy policy</link>.",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": {
+      "title": "Request received",
+      "body": "Thank you. Your reference is {reference}. We usually reply within {days} business days.",
+      "another": "Send another request"
+    },
+    "responseDays": "2",
+    "errors": {
+      "required": "This field is required.",
+      "too_long": "This text is too long.",
+      "invalid_email": "Enter a valid email, for example name@company.com.",
+      "invalid_option": "Choose one of the options.",
+      "consent_required": "We need your consent to reply.",
+      "summary": "Please review {count, plural, one {# highlighted field} other {# highlighted fields}}.",
+      "rate_limited": "We received several requests in a row. Please try again in a few minutes.",
+      "retry": "We couldn't send that. Wait a moment and try again.",
+      "unavailable": "Sending is temporarily unavailable. Email us at {email}.",
+      "generic": "Something went wrong. Try again or email us at {email}."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "back": "Back to home"
+  }
+}
