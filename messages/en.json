@@ -44,7 +44,7 @@
     "talkToUs": "Talk to Servus",
     "exploreWork": "Explore our work",
     "conceptualImage": "Conceptual image",
-    "visitPartner": "Visit the partner's website",
+    "visitPartner": "Visit the {name} website",
     "galleryTitle": "Inside the product",
     "conceptualIllustration": "Conceptual illustration",
     "scope": "Scope"

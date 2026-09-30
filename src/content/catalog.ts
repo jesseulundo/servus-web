@@ -99,8 +99,8 @@ export interface WorkMeta {
 }
 
 export const work: Record<WorkSlug, WorkMeta> = {
-  // TODO(partnerships): confirm the official URL (likely https://ibex-tokyo.net) and photo permission.
-  ibex: { publication: "draft", country: "JP", partnerUrl: process.env.NEXT_PUBLIC_URL_IBEX || undefined },
+  // Official website built by Servus (confirmed 30 Sept 2026).
+  ibex: { publication: "approved", country: "JP", partnerUrl: process.env.NEXT_PUBLIC_URL_IBEX || "https://www.ibex-tokyo.net/en" },
   "fenix-academy": { publication: "draft", country: "AO" },
   urolundo: { publication: "draft", country: "AO" }, // Angola confirmed in visual guide V3
 };

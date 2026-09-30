@@ -57,8 +57,8 @@ export default async function CaseStudyPage({ params }: PageProps<"/[locale]/wor
         media={workMedia[slug]}
         actions={
           work[slug].partnerUrl ? (
-            <ExternalButton href={work[slug].partnerUrl!} variant="secondaryOnDark">
-              {t("common.visitPartner")}
+            <ExternalButton href={work[slug].partnerUrl!} variant="primaryOnDark">
+              {t("common.visitPartner", { name: w.partner })}
             </ExternalButton>
           ) : undefined
         }
