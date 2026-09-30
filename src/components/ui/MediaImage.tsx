@@ -16,13 +16,16 @@ export function MediaImage({
   className = "aspect-[16/10]",
   preload = false,
   labelPosition = "bottom-left",
+  imgClassName,
 }: {
   id: MediaKey;
   sizes: string;
   className?: string;
   /** Only for the above-the-fold hero (LCP image). */
   preload?: boolean;
-  labelPosition?: "bottom-left" | "top-left";
+  labelPosition?: "bottom-left" | "top-left" | "bottom-right";
+  /** Responsive crop override (e.g. "object-[62%_50%] md:object-[68%_50%]"); replaces the registry focus. */
+  imgClassName?: string;
 }) {
   const locale = useLocale() as Locale;
   const t = useTranslations("common");
@@ -37,14 +40,14 @@ export function MediaImage({
         sizes={sizes}
         placeholder="blur"
         preload={preload}
-        className="object-cover"
-        style={{ objectPosition: m.position }}
+        className={`object-cover ${imgClassName ?? ""}`}
+        style={imgClassName ? undefined : { objectPosition: m.position }}
       />
-      {m.kind === "conceptual" && (
+      {(m.kind === "conceptual" || m.kind === "illustration") && (
         <span
-          className={`absolute ${labelPosition === "top-left" ? "top-3" : "bottom-3"} pointer-events-none left-3 z-10 rounded-full bg-navy/80 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm`}
+          className={`absolute ${labelPosition === "top-left" ? "top-3 left-3" : labelPosition === "bottom-right" ? "bottom-3 right-3" : "bottom-3 left-3"} pointer-events-none z-10 rounded-full bg-navy/80 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm`}
         >
-          {t("conceptualImage")}
+          {t(m.kind === "illustration" ? "conceptualIllustration" : "conceptualImage")}
         </span>
       )}
     </div>

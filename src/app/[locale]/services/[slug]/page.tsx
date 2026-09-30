@@ -14,6 +14,7 @@ import { ProductCard, WorkCard } from "@/components/sections/Cards";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Link } from "@/i18n/navigation";
+import { serviceMedia } from "@/content/media";
 
 const isService = (s: string): s is ServiceSlug => (SERVICE_SLUGS as readonly string[]).includes(s);
 
@@ -65,6 +66,8 @@ export default async function ServicePage({ params }: PageProps<"/[locale]/servi
         }
         title={s.name}
         text={s.summary}
+        media={serviceMedia[slug]}
+        pattern={false}
         actions={
           <ButtonLink href={contactHref} variant="primaryOnDark" arrow>
             {t("common.talkToUs")}

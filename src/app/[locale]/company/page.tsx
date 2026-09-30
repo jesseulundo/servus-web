@@ -5,6 +5,8 @@ import { pageMetadata } from "@/lib/seo";
 import { PageHero, Eyebrow } from "@/components/sections/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Container";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { PrinciplesGrid } from "@/components/sections/Process";
+import { MediaImage } from "@/components/ui/MediaImage";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/company">) {
   const locale = (await params).locale as Locale;
@@ -45,19 +47,28 @@ export default async function CompanyPage({ params }: PageProps<"/[locale]/compa
 
       <Section labelledBy="pillars">
         <SectionHeading id="pillars" title={c.pillarsTitle} />
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {c.pillars.map((p, i) => (
-            <li key={p.title} className="border-t-2 border-green pt-4">
-              <span className="font-mono text-sm text-ink-muted">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-1 text-lg">{p.title}</h3>
-              <p className="mt-2 leading-relaxed text-ink-muted">{p.text}</p>
-            </li>
-          ))}
-        </ul>
+        <PrinciplesGrid items={c.pillars} />
       </Section>
 
       <Section tone="navy" labelledBy="markets">
-        <SectionHeading id="markets" dark title={c.markets.title} intro={c.markets.text} />
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-14">
+          <div>
+            <SectionHeading id="markets" dark title={c.markets.title} intro={c.markets.text} />
+            <ul className="-mt-4 flex flex-wrap gap-2">
+              {c.markets.tags.map((tag) => (
+                <li key={tag} className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/20">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <MediaImage
+            id="globalNetwork"
+            sizes="(max-width: 1024px) 100vw, 700px"
+            className="aspect-[16/10] rounded-2xl ring-1 ring-white/10"
+            imgClassName="object-[62%_50%]"
+          />
+        </div>
         {/* TODO(direction): team section — publish founders/leads once approved (blueprint "Equipa"). */}
       </Section>
 

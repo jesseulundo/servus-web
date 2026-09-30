@@ -102,5 +102,5 @@ export const work: Record<WorkSlug, WorkMeta> = {
   // TODO(partnerships): confirm the official URL (likely https://ibex-tokyo.net) and photo permission.
   ibex: { publication: "draft", country: "JP", partnerUrl: process.env.NEXT_PUBLIC_URL_IBEX || undefined },
   "fenix-academy": { publication: "draft", country: "AO" },
-  urolundo: { publication: "draft" }, // TODO(partnerships): confirm market
+  urolundo: { publication: "draft", country: "AO" }, // Angola confirmed in visual guide V3
 };

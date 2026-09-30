@@ -8,7 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Container";
 import { ButtonLink, TextLink } from "@/components/ui/Button";
 import { ProductCard, ServiceCard, WorkCard } from "@/components/sections/Cards";
-import { Steps } from "@/components/ui/Steps";
+import { ProcessTimeline } from "@/components/sections/Process";
 import { FormRenderer } from "@/components/forms/FormRenderer";
 import { JsonLd } from "@/components/ui/JsonLd";
 
@@ -42,8 +42,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       />
 
       <PageHero
-        large
-        media="servusHero"
+        backdrop={{ id: "servusHero", mobileFocus: "object-[62%_50%]", desktopFocus: "lg:object-[68%_50%]" }}
         title={h.hero.title}
         text={h.hero.text}
         actions={
@@ -90,7 +89,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       <Section tone="mist" labelledBy="method">
         <SectionHeading id="method" title={h.method.title} intro={h.method.intro} />
-        <Steps steps={h.method.steps} />
+        <ProcessTimeline steps={h.method.steps} />
       </Section>
 
       <Section tone="navy" labelledBy="trust">

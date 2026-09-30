@@ -18,6 +18,7 @@ export function PageHero({
   large = false,
   media,
   mediaFrame = "photo",
+  backdrop,
   children,
 }: {
   eyebrow?: ReactNode;
@@ -29,8 +30,44 @@ export function PageHero({
   media?: MediaKey;
   /** "browser" wraps a real screenshot in a browser frame. */
   mediaFrame?: "photo" | "browser";
+  /**
+   * Full-width cinematic background (visual guide V3, homepage only): copy sits on the image's
+   * dark left side. Below 1024px the image drops below the copy as a crop of the group.
+   */
+  backdrop?: { id: MediaKey; mobileFocus: string; desktopFocus: string };
   children?: ReactNode;
 }) {
+  if (backdrop) {
+    return (
+      <section className="relative isolate flex flex-col overflow-hidden bg-navy text-white lg:min-h-[720px]" data-sticky-cta-hide>
+        <Container className="relative z-10 py-16 sm:py-20 lg:flex lg:flex-1 lg:items-center lg:py-28">
+          <div className="max-w-xl lg:max-w-2xl">
+            {eyebrow && <div className="mb-5">{eyebrow}</div>}
+            <h1 className="text-4xl leading-[1.06] text-white sm:text-5xl lg:text-6xl">{title}</h1>
+            {text && <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 sm:text-xl">{text}</p>}
+            {actions && <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">{actions}</div>}
+            {children}
+          </div>
+        </Container>
+        {/* Desktop: image anchored right, starting after the copy column, blending into navy on its left edge. */}
+        <div className="relative lg:absolute lg:inset-y-0 lg:left-[40%] lg:right-0 lg:-z-10 xl:left-[36%]">
+          <MediaImage
+            id={backdrop.id}
+            preload
+            sizes="(max-width: 1024px) 100vw, 64vw"
+            labelPosition="bottom-right"
+            className="aspect-[4/5] sm:aspect-[16/10] lg:aspect-auto lg:h-full"
+            imgClassName={`${backdrop.mobileFocus} ${backdrop.desktopFocus}`}
+          />
+          {/* Legibility: solid navy behind the copy, fading out toward the team (guide: 15–25% overlay). */}
+          <div aria-hidden className="absolute inset-0 hidden bg-gradient-to-r from-navy via-navy/30 to-transparent lg:block" />
+          <div aria-hidden className="absolute inset-0 hidden bg-navy/15 lg:block" />
+          <div aria-hidden className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-navy to-transparent lg:hidden" />
+        </div>
+      </section>
+    );
+  }
+
   const split = Boolean(media);
   const titleSize = large
     ? split

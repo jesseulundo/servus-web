@@ -39,7 +39,8 @@ npm run check          # typecheck + lint + tests
 ## Images
 
 - Every image is registered once in `src/content/media.ts`.
-- AI-generated images are `kind: "conceptual"` and automatically show the "Imagem conceptual" label. Real screenshots and photos show no label.
+- AI-generated images are `kind: "conceptual"` (label "Imagem conceptual") or `kind: "illustration"` (label "Ilustração conceptual"). Real screenshots and photos show no label.
+- Each partnership/CTA image is used in one context only (visual guide V3): `ctaDiscovery` on Serviços, `ctaSimilarProject` on Trabalhos, `partnershipProposal` on Parcerias.
 - **To replace a conceptual image with an official one:** put the new WebP in `src/assets/images/`, point the entry's `src` at it, set `kind` to `"photo"` or `"screenshot"`, and update the alt text. Update `tests/media.test.ts` if the image is no longer conceptual.
 - Keep each file under 300 KB (a test checks this). The original PNGs stay outside the repo.
 

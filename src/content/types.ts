@@ -63,6 +63,8 @@ export interface WorkCopy {
   solution: string;
   status: string;
   outcome: string;
+  /** Short scope indicators shown as chips (e.g. Urolundo, visual guide V3). */
+  scope?: string[];
 }
 
 export interface SiteContent {
@@ -86,7 +88,7 @@ export interface SiteContent {
     promise: Step;
     pillarsTitle: string;
     pillars: Step[];
-    markets: { title: string; text: string };
+    markets: { title: string; text: string; tags: string[] };
     cta: { title: string; text: string };
   };
   services: {

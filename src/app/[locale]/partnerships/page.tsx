@@ -57,7 +57,7 @@ export default async function PartnershipsPage({ params }: PageProps<"/[locale]/
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
           <div>
             <SectionHeading id="propose-title" title={c.formTitle} intro={t("forms.intros.partnership")} />
-            <MediaImage id="partnership" sizes="(max-width: 1024px) 100vw, 480px" className="aspect-[4/3] rounded-2xl" />
+            <MediaImage id="partnershipProposal" sizes="(max-width: 1024px) 100vw, 480px" className="aspect-[4/3] rounded-2xl" />
           </div>
           <FormRenderer type="partnership" headingId="propose-title" />
         </div>

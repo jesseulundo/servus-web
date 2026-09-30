@@ -85,6 +85,7 @@ const en: SiteContent = {
     markets: {
       title: "Where we work",
       text: "We have projects connected to Japan, Angola and international markets. We don't limit ourselves to a single country.",
+      tags: ["Japan", "Angola", "International"],
     },
     cta: { title: "Let's talk about your project", text: "Tell us what you need to solve and in which market." },
   },
@@ -402,10 +403,11 @@ const en: SiteContent = {
       },
       urolundo: {
         partner: "Urolundo",
-        context: "Solution for a urology clinic.",
-        seo: { title: "Urolundo — Servus work", description: "An app for schedules and clinical operations." },
+        context: "Urology clinic in Angola.",
+        seo: { title: "Urolundo — Servus work", description: "A clinic management platform for a urology clinic in Angola." },
         challenge: "Organising schedules, clinical operations and tracking patient and doctor activity.",
-        responsibility: "An app for schedules, clinical operations and activity tracking.",
+        responsibility: "A clinic management platform that organises schedules, doctors' activities and operational patient follow-up.",
+        scope: ["Scheduling", "Doctor management", "Patient follow-up"],
         solution: "Details to follow once approved by the partner. No patient data is published.",
         status: "To be confirmed.",
         outcome: "To be published with the partner's permission.",

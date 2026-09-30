@@ -54,7 +54,7 @@ export function Header() {
           <Logo onDark className="h-8 w-auto lg:h-9" />
         </Link>
 
-        <nav aria-label={t("a11y.mainNav")} className="hidden lg:block">
+        <nav aria-label={t("a11y.mainNav")} className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {NAV_ITEMS.map((item) => {
               const active = isActive(pathname, item.href);
@@ -75,7 +75,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <LocaleSwitcher />
           <Link href="/contact" className={buttonClass("primaryOnDark", "min-h-10 !w-auto px-4 py-2 text-sm")}>
             {t("nav.cta")}
@@ -85,7 +85,7 @@ export function Header() {
         <button
           ref={toggleRef}
           type="button"
-          className="-mr-2 inline-flex size-11 items-center justify-center rounded-md lg:hidden"
+          className="-mr-2 inline-flex size-11 items-center justify-center rounded-md xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
@@ -96,7 +96,7 @@ export function Header() {
       </div>
 
       {/* Mobile menu: simple full-width panel (blueprint: "menu simples") */}
-      <div id="mobile-menu" hidden={!open} className="absolute inset-x-0 top-16 h-[calc(100dvh-4rem)] overflow-y-auto bg-navy lg:hidden">
+      <div id="mobile-menu" hidden={!open} className="absolute inset-x-0 top-16 h-[calc(100dvh-4rem)] overflow-y-auto bg-navy lg:top-20 lg:h-[calc(100dvh-5rem)] xl:hidden">
         <nav aria-label={t("a11y.mainNav")} className="px-4 pb-8 pt-2 sm:px-6">
           <ul className="divide-y divide-white/10">
             {NAV_ITEMS.map((item) => {

@@ -11,6 +11,7 @@ import { DraftBanner } from "@/components/ui/Notice";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { ExternalButton } from "@/components/ui/Button";
 import { workMedia } from "@/content/media";
+import { ScopeChips } from "@/components/sections/Cards";
 
 const isWork = (s: string): s is WorkSlug => (WORK_SLUGS as readonly string[]).includes(s);
 
@@ -73,7 +74,9 @@ export default async function CaseStudyPage({ params }: PageProps<"/[locale]/wor
         }
         title={w.partner}
         text={w.context}
-      />
+      >
+        {w.scope && <ScopeChips items={w.scope} label={t("common.scope")} className="mt-8" onDark />}
+      </PageHero>
       <Section>
         <ol className="grid gap-5 md:grid-cols-2">
           {blocks.map(([label, text], i) => (
@@ -85,7 +88,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/[locale]/wor
           ))}
         </ol>
       </Section>
-      <CtaBand title={c.cta.title} text={c.cta.text} label={t("common.talkToUs")} href={{ pathname: "/contact", query: { form: "service" } }} />
+      <CtaBand title={c.cta.title} text={c.cta.text} label={t("common.talkToUs")} href={{ pathname: "/contact", query: { form: "service" } }} media="ctaSimilarProject" />
     </>
   );
 }
