@@ -309,7 +309,7 @@ const pt: SiteContent = {
   products: {
     seo: {
       title: "Produtos",
-      description: "Produtos digitais da Servus: Trumuno Footy e Audio Cleaner em produção; MOAMBEIRA e RH em desenvolvimento.",
+      description: "Produtos digitais da Servus: Trumuno Footy em produção; Audio Cleaner, MOAMBEIRA e RH em desenvolvimento.",
     },
     title: "Produtos Servus",
     intro:
@@ -328,16 +328,16 @@ const pt: SiteContent = {
           { title: "Diferencial", text: "Competição baseada em conhecimento futebolístico, sem apostas nem dinheiro em jogo." },
           { title: "Prova", text: "Competições reais, jornadas atualizadas e classificação por liga." },
         ],
-        primaryLabel: "Jogar agora",
+        primaryLabel: "Visitar Trumuno Footy",
         secondaryLabel: "Contactar para parceria ou campanha",
       },
       "audio-cleaner": {
         name: "Audio Cleaner",
         valueProp: "Limpeza de ruído e preparação de áudio para criadores e profissionais.",
-        seo: { title: "Audio Cleaner", description: "Reduza ruído, equilibre níveis e prepare áudio ou vídeo para publicação." },
+        seo: { title: "Audio Cleaner", description: "Limpeza de ruído e preparação de áudio e vídeo para publicação. Em desenvolvimento." },
         heroTitle: "Áudio limpo sem perder tempo",
         description:
-          "O Audio Cleaner ajuda criadores e profissionais a reduzir ruído, equilibrar níveis e preparar ficheiros de áudio ou vídeo para publicação.",
+          "O Audio Cleaner vai ajudar criadores e profissionais a reduzir ruído, equilibrar níveis e preparar ficheiros de áudio ou vídeo para publicação.",
         sections: [
           { title: "O problema", text: "Ruído, eco e níveis inconsistentes reduzem a qualidade de entrevistas, podcasts, vídeos e gravações." },
           { title: "A solução", text: "Carregar, processar, ouvir o resultado e descarregar o ficheiro preparado." },
@@ -346,10 +346,9 @@ const pt: SiteContent = {
         ],
         notice: {
           title: "Expectativas realistas",
-          text: "O Audio Cleaner reduz significativamente o ruído, mas nenhuma ferramenta remove todo o ruído de todas as gravações.",
+          text: "O Audio Cleaner vai reduzir significativamente o ruído, mas nenhuma ferramenta remove todo o ruído de todas as gravações.",
         },
-        primaryLabel: "Experimentar",
-        secondaryLabel: "Saber mais",
+        primaryLabel: "Quero saber mais",
       },
       moambeira: {
         name: "MOAMBEIRA",

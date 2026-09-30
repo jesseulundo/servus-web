@@ -43,6 +43,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       <PageHero
         large
+        media="servusHero"
         title={h.hero.title}
         text={h.hero.text}
         actions={

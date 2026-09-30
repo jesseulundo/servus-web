@@ -26,6 +26,8 @@ npm run check          # typecheck + lint + tests
 | `src/i18n/routing.ts` | Locales and localized URLs |
 | `src/app/globals.css` | Design tokens (brand palette, fonts) |
 | `public/brand/` | Logo variants derived from the official PNG |
+| `src/assets/images/` | Website photos and screenshots (WebP) |
+| `src/content/media.ts` | Image registry: file, crop focus, alt text (PT/EN), conceptual or real |
 
 ## Common changes
 
@@ -33,6 +35,13 @@ npm run check          # typecheck + lint + tests
 - **Publish a case study:** set `publication: "approved"` in `catalog.ts`.
 - **Add a form field:** add one line in `definitions.ts` and its label in both `messages/*.json`.
 - **Add a language:** add it to `routing.ts`, then add `messages/<code>.json` and `src/content/locales/<code>.ts`, and register it in `src/content/index.ts`.
+
+## Images
+
+- Every image is registered once in `src/content/media.ts`.
+- AI-generated images are `kind: "conceptual"` and automatically show the "Imagem conceptual" label. Real screenshots and photos show no label.
+- **To replace a conceptual image with an official one:** put the new WebP in `src/assets/images/`, point the entry's `src` at it, set `kind` to `"photo"` or `"screenshot"`, and update the alt text. Update `tests/media.test.ts` if the image is no longer conceptual.
+- Keep each file under 300 KB (a test checks this). The original PNGs stay outside the repo.
 
 ## Deploying (Vercel)
 

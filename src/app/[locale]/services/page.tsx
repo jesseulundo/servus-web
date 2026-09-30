@@ -28,7 +28,7 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
           ))}
         </div>
       </Section>
-      <CtaBand title={c.home.contact.title} text={c.home.contact.text} label={t("common.talkToUs")} href={{ pathname: "/contact", query: { form: "service" } }} />
+      <CtaBand title={c.home.contact.title} text={c.home.contact.text} label={t("common.talkToUs")} href={{ pathname: "/contact", query: { form: "service" } }} media="partnership" />
     </>
   );
 }

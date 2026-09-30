@@ -4,7 +4,7 @@ import { useId, useRef, useState, type FormEvent, type SyntheticEvent } from "re
 import { useLocale, useTranslations } from "next-intl";
 import { CheckCircle2, ChevronDown, Loader2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { FORMS, type FieldDef, type FormType } from "@/lib/forms/definitions";
+import { FORMS, type FieldDef, type FieldName, type FormType } from "@/lib/forms/definitions";
 import type { FieldErrors } from "@/lib/forms/schema";
 import { HONEYPOT_FIELD } from "@/lib/forms/spam";
 import { track } from "@/lib/analytics";
@@ -19,12 +19,15 @@ const inputCls =
 export function FormRenderer({
   type,
   compact = false,
+  defaults,
   headingId,
 }: {
   type: FormType;
   /** Show required fields only (short home-page form). */
   compact?: boolean;
   headingId?: string;
+  /** Pre-filled values, e.g. the product on a product page's "Quero saber mais" form. */
+  defaults?: Partial<Record<FieldName, string>>;
 }) {
   const t = useTranslations("forms");
   const locale = useLocale();
@@ -165,7 +168,7 @@ export function FormRenderer({
 
       <div className="grid gap-5 sm:grid-cols-2">
         {fields.map((f) => (
-          <Field key={f.name} field={f} id={fid(f.name)} error={errorMessage(errors[f.name])} />
+          <Field key={f.name} field={f} id={fid(f.name)} error={errorMessage(errors[f.name])} defaultValue={defaults?.[f.name]} />
         ))}
       </div>
 
@@ -217,7 +220,7 @@ export function FormRenderer({
   );
 }
 
-function Field({ field, id, error }: { field: FieldDef; id: string; error: string | null }) {
+function Field({ field, id, error, defaultValue }: { field: FieldDef; id: string; error: string | null; defaultValue?: string }) {
   const t = useTranslations("forms");
   const label = t(`fields.${field.name}`);
   const hintKey = `hints.${field.name}` as "hints.need";
@@ -273,7 +276,7 @@ function Field({ field, id, error }: { field: FieldDef; id: string; error: strin
       )}
       {field.kind === "select" && (
         <div className="relative">
-          <select {...common} defaultValue="" className={`${inputCls} appearance-none pr-10`}>
+          <select {...common} defaultValue={defaultValue ?? ""} className={`${inputCls} appearance-none pr-10`}>
             <option value="" disabled={field.required}>
               {t("selectPlaceholder")}
             </option>

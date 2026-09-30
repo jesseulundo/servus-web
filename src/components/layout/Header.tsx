@@ -51,7 +51,7 @@ export function Header() {
     <header className="relative z-40 bg-navy text-white md:sticky md:top-0">
       <div className="mx-auto flex h-16 w-full max-w-site items-center justify-between gap-6 px-4 sm:px-6 lg:h-20 lg:px-8">
         <Link href="/" aria-label={t("a11y.homeLink")} className="shrink-0">
-          <Logo onDark priority className="h-8 w-auto lg:h-9" />
+          <Logo onDark className="h-8 w-auto lg:h-9" />
         </Link>
 
         <nav aria-label={t("a11y.mainNav")} className="hidden lg:block">

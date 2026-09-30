@@ -36,7 +36,7 @@ export default async function ProductsPage({ params }: PageProps<"/[locale]/prod
         <div className="mb-6">
           <Notice>{t("common.developmentNotice")}</Notice>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {dev.map((slug) => (
             <ProductCard key={slug} slug={slug} copy={c.items[slug]} />
           ))}

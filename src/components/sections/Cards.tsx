@@ -5,6 +5,12 @@ import { products, services, work, type ProductSlug, type ServiceSlug, type Work
 import type { ProductCopy, ServiceCopy, WorkCopy } from "@/content/types";
 import { serviceIcons } from "@/components/ui/icons";
 import { StatusBadge } from "@/components/ui/StatusBadge";
+import { MediaImage } from "@/components/ui/MediaImage";
+import { productMedia, workMedia } from "@/content/media";
+
+// Visual guide "sizes" suggestion, per grid.
+const CARD_SIZES_2COL = "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 600px";
+const CARD_SIZES_3COL = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px";
 
 const cardBase =
   "group relative flex h-full flex-col rounded-2xl bg-white p-6 ring-1 ring-line transition-shadow duration-200 hover:shadow-lg hover:shadow-navy/5 focus-within:ring-2 focus-within:ring-orange";
@@ -44,20 +50,23 @@ export function ProductCard({ slug, copy }: { slug: ProductSlug; copy: ProductCo
   const t = useTranslations("common");
   const meta = products[slug];
   return (
-    <article className={`${cardBase} overflow-hidden pt-0`}>
+    <article className={`${cardBase} overflow-hidden p-0`}>
+      <MediaImage id={productMedia[slug]} sizes={CARD_SIZES_2COL} className="aspect-[16/9]" />
       {/* Controlled product identity: a single accent band */}
-      <div aria-hidden className="-mx-6 mb-6 h-1.5" style={{ backgroundColor: meta.accent }} />
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-        <StatusBadge status={meta.status} />
-        <span className="font-mono text-xs text-ink-muted">{t("servusProduct")}</span>
+      <div aria-hidden className="h-1.5" style={{ backgroundColor: meta.accent }} />
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <StatusBadge status={meta.status} />
+          <span className="font-mono text-xs text-ink-muted">{t("servusProduct")}</span>
+        </div>
+        <h3 className="text-2xl">
+          <StretchedLink href={{ pathname: "/products/[slug]", params: { slug } }}>{copy.name}</StretchedLink>
+        </h3>
+        <p className="mt-3 flex-1 leading-relaxed text-ink-muted">{copy.valueProp}</p>
+        <span className="mt-6 inline-flex items-center gap-1.5 font-semibold text-green-strong">
+          {t("learnMore")} <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
+        </span>
       </div>
-      <h3 className="text-2xl">
-        <StretchedLink href={{ pathname: "/products/[slug]", params: { slug } }}>{copy.name}</StretchedLink>
-      </h3>
-      <p className="mt-3 flex-1 leading-relaxed text-ink-muted">{copy.valueProp}</p>
-      <span className="mt-6 inline-flex items-center gap-1.5 font-semibold text-green-strong">
-        {t("learnMore")} <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
-      </span>
     </article>
   );
 }
@@ -71,24 +80,27 @@ export function WorkCard({ slug, copy, locale }: { slug: WorkSlug; copy: WorkCop
   const t = useTranslations("common");
   const meta = work[slug];
   return (
-    <article className={cardBase}>
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <StatusBadge status="partner" />
-        {meta.country && (
-          <span className="inline-flex items-center gap-1 text-sm text-ink-muted">
-            <MapPin aria-hidden className="size-3.5" />
-            {countryNames[locale]?.[meta.country] ?? meta.country}
-          </span>
-        )}
+    <article className={`${cardBase} overflow-hidden p-0`}>
+      <MediaImage id={workMedia[slug]} sizes={CARD_SIZES_3COL} className="aspect-[4/3]" />
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <StatusBadge status="partner" />
+          {meta.country && (
+            <span className="inline-flex items-center gap-1 text-sm text-ink-muted">
+              <MapPin aria-hidden className="size-3.5" />
+              {countryNames[locale]?.[meta.country] ?? meta.country}
+            </span>
+          )}
+        </div>
+        <h3 className="text-xl">
+          <StretchedLink href={{ pathname: "/work/[slug]", params: { slug } }}>{copy.partner}</StretchedLink>
+        </h3>
+        <p className="mt-2 text-ink">{copy.context}</p>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{copy.responsibility}</p>
+        <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-green-strong">
+          {t("learnMore")} <ArrowRight aria-hidden className="size-4" />
+        </span>
       </div>
-      <h3 className="text-xl">
-        <StretchedLink href={{ pathname: "/work/[slug]", params: { slug } }}>{copy.partner}</StretchedLink>
-      </h3>
-      <p className="mt-2 text-ink">{copy.context}</p>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{copy.responsibility}</p>
-      <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-green-strong">
-        {t("learnMore")} <ArrowRight aria-hidden className="size-4" />
-      </span>
     </article>
   );
 }

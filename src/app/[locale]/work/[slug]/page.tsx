@@ -9,6 +9,8 @@ import { Section } from "@/components/ui/Container";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { DraftBanner } from "@/components/ui/Notice";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { ExternalButton } from "@/components/ui/Button";
+import { workMedia } from "@/content/media";
 
 const isWork = (s: string): s is WorkSlug => (WORK_SLUGS as readonly string[]).includes(s);
 
@@ -50,6 +52,15 @@ export default async function CaseStudyPage({ params }: PageProps<"/[locale]/wor
     <>
       {work[slug].publication === "draft" && <DraftBanner text={t("common.draftNotice")} />}
       <PageHero
+        pattern={false}
+        media={workMedia[slug]}
+        actions={
+          work[slug].partnerUrl ? (
+            <ExternalButton href={work[slug].partnerUrl!} variant="secondaryOnDark">
+              {t("common.visitPartner")}
+            </ExternalButton>
+          ) : undefined
+        }
         eyebrow={
           <div className="flex flex-wrap items-center gap-3">
             <nav aria-label={t("a11y.breadcrumb")}>

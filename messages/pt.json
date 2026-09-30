@@ -31,7 +31,7 @@
   "common": {
     "learnMore": "Saber mais",
     "seeAll": "Ver todos",
-    "servusProduct": "A Servus product",
+    "servusProduct": "Um produto Servus",
     "partnerProject": "Projeto de parceiro",
     "status": {
       "production": "Em produção",
@@ -42,7 +42,10 @@
     "draftNotice": "Conteúdo provisório — a aguardar aprovação antes da publicação.",
     "urlPending": "Ligação pública em breve",
     "talkToUs": "Falar com a Servus",
-    "exploreWork": "Explorar os nossos trabalhos"
+    "exploreWork": "Explorar os nossos trabalhos",
+    "conceptualImage": "Imagem conceptual",
+    "visitPartner": "Visitar o website do parceiro",
+    "galleryTitle": "Por dentro do produto"
   },
   "footer": {
     "tagline": "Consultoria e produtos digitais. Websites, aplicações, sistemas de gestão, IA e automação.",
@@ -60,15 +63,17 @@
       "demo": "Demonstração RH",
       "general": "Contacto geral",
       "support": "Suporte de produto",
-      "interest": "Lista de interesse MOAMBEIRA"
+      "interest": "Lista de interesse MOAMBEIRA",
+      "notify": "Novidades de produto"
     },
     "intros": {
       "service": "Conte-nos o que precisa de resolver. Respondemos com perguntas ou uma proposta de conversa de descoberta.",
       "partnership": "Descreva a oportunidade. Quanto mais concreta, mais rápida a avaliação.",
       "demo": "Diga-nos que módulos lhe interessam. Contactamos quando a demonstração estiver disponível.",
       "general": "Para qualquer outro assunto.",
-      "support": "Para utilizadores do Trumuno Footy ou do Audio Cleaner. Não inclua palavras-passe.",
-      "interest": "Receba novidades quando a MOAMBEIRA abrir no seu mercado."
+      "support": "Para utilizadores do Trumuno Footy. Não inclua palavras-passe.",
+      "interest": "Receba novidades quando a MOAMBEIRA abrir no seu mercado.",
+      "notify": "Deixe o seu email e avisamos quando o produto estiver disponível."
     },
     "chooseType": "Tipo de pedido",
     "required": "obrigatório",
@@ -93,7 +98,8 @@
       "product": "Produto",
       "account": "Conta (email ou nome de utilizador)",
       "supportCategory": "Categoria",
-      "interestRole": "Como quer participar?"
+      "interestRole": "Como quer participar?",
+      "interestProduct": "Produto que quer acompanhar"
     },
     "hints": {
       "need": "Descreva o problema e o impacto no negócio. Não inclua documentos nem dados sensíveis.",
@@ -152,6 +158,11 @@
         "buyer": "Quero ser comprador",
         "traveller": "Quero ser viajante",
         "logistics": "Parceiro logístico"
+      },
+      "interestProduct": {
+        "audio-cleaner": "Audio Cleaner",
+        "moambeira": "MOAMBEIRA",
+        "rh": "RH"
       }
     },
     "consent": "Aceito que a Servus utilize estes dados para responder ao meu pedido, de acordo com a <link>política de privacidade</link>.",

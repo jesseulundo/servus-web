@@ -279,7 +279,7 @@ const en: SiteContent = {
   products: {
     seo: {
       title: "Products",
-      description: "Servus digital products: Trumuno Footy and Audio Cleaner are live; MOAMBEIRA and RH are in development.",
+      description: "Servus digital products: Trumuno Footy is live; Audio Cleaner, MOAMBEIRA and RH are in development.",
     },
     title: "Servus products",
     intro: "Products we build and run. Each keeps its own identity. Products in development are not yet available as a service.",
@@ -297,15 +297,15 @@ const en: SiteContent = {
           { title: "What's different", text: "Competition based on football knowledge — no betting, no money at stake." },
           { title: "Proof", text: "Real competitions, up-to-date matchdays and standings for every league." },
         ],
-        primaryLabel: "Play now",
+        primaryLabel: "Visit Trumuno Footy",
         secondaryLabel: "Contact us about a partnership or campaign",
       },
       "audio-cleaner": {
         name: "Audio Cleaner",
         valueProp: "Noise removal and audio preparation for creators and professionals.",
-        seo: { title: "Audio Cleaner", description: "Reduce noise, balance levels and prepare audio or video for publishing." },
+        seo: { title: "Audio Cleaner", description: "Noise removal and audio/video preparation for publishing. In development." },
         heroTitle: "Clean audio without wasting time",
-        description: "Audio Cleaner helps creators and professionals reduce noise, balance levels and prepare audio or video files for publishing.",
+        description: "Audio Cleaner will help creators and professionals reduce noise, balance levels and prepare audio or video files for publishing.",
         sections: [
           { title: "The problem", text: "Noise, echo and uneven levels lower the quality of interviews, podcasts, videos and recordings." },
           { title: "The solution", text: "Upload, process, listen to the result and download the prepared file." },
@@ -314,10 +314,9 @@ const en: SiteContent = {
         ],
         notice: {
           title: "Realistic expectations",
-          text: "Audio Cleaner significantly reduces noise, but no tool removes all noise from every recording.",
+          text: "Audio Cleaner will significantly reduce noise, but no tool removes all noise from every recording.",
         },
-        primaryLabel: "Try it",
-        secondaryLabel: "Learn more",
+        primaryLabel: "I want to know more",
       },
       moambeira: {
         name: "MOAMBEIRA",

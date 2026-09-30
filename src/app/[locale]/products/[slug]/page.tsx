@@ -14,6 +14,8 @@ import { Notice, DraftBanner } from "@/components/ui/Notice";
 import { Steps } from "@/components/ui/Steps";
 import { FormRenderer } from "@/components/forms/FormRenderer";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { BrowserFrame } from "@/components/ui/MediaImage";
+import { media, productGallery, productMedia } from "@/content/media";
 
 const isProduct = (s: string): s is ProductSlug => (PRODUCT_SLUGS as readonly string[]).includes(s);
 const FORM_ANCHOR = "request";
@@ -68,6 +70,7 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/produ
   // The primary form (if any) is embedded on the page so the visitor never leaves it.
   const embeddedForm = meta.primary.kind === "form" ? meta.primary.form : null;
   const primaryMissing = meta.primary.kind === "external" && !meta.primary.url;
+  const gallery = productGallery[slug];
 
   return (
     <>
@@ -88,6 +91,8 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/produ
 
       <PageHero
         pattern={false}
+        media={productMedia[slug]}
+        mediaFrame={media[productMedia[slug]].kind === "screenshot" ? "browser" : "photo"}
         eyebrow={
           <div className="flex flex-wrap items-center gap-3">
             <nav aria-label={t("a11y.breadcrumb")}>
@@ -103,9 +108,8 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/produ
         actions={
           <>
             {primaryMissing ? (
-              <span className="inline-flex min-h-12 items-center rounded-lg border border-dashed border-white/30 px-5 font-medium text-white/80">
-                {t("common.urlPending")}
-              </span>
+              // Plain text, never a fake button (visual guide: no clickable-looking "coming soon").
+              <p className="self-center text-sm text-white/70">{t("common.urlPending")}</p>
             ) : (
               <Cta target={meta.primary} label={p.primaryLabel} variant="primaryOnDark" embedded={!!embeddedForm} />
             )}
@@ -148,6 +152,17 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/produ
         </Section>
       )}
 
+      {gallery && gallery.length > 0 && (
+        <Section tone="navy" labelledBy="gallery">
+          <SectionHeading id="gallery" dark title={t("common.galleryTitle")} />
+          <div className="grid gap-8 md:grid-cols-2 [&_figcaption]:text-white/75">
+            {gallery.map((id) => (
+              <BrowserFrame key={id} id={id} withCaption sizes="(max-width: 768px) 100vw, 600px" />
+            ))}
+          </div>
+        </Section>
+      )}
+
       {p.flow && (
         <Section tone="mist" labelledBy="flow">
           <SectionHeading id="flow" title={p.flow.title} />
@@ -169,7 +184,11 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/produ
         <Section tone="mist" id={FORM_ANCHOR} labelledBy="request-title">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
             <SectionHeading id="request-title" title={p.primaryLabel} intro={t(`forms.intros.${embeddedForm}`)} />
-            <FormRenderer type={embeddedForm} headingId="request-title" />
+            <FormRenderer
+              type={embeddedForm}
+              headingId="request-title"
+              defaults={embeddedForm === "notify" ? { interestProduct: slug } : undefined}
+            />
           </div>
         </Section>
       )}
