@@ -27,7 +27,7 @@ export default async function WorkPage({ params }: PageProps<"/[locale]/work">) 
           ))}
         </div>
       </Section>
-      <CtaBand title={c.cta.title} text={c.cta.text} label={t("common.talkToUs")} href={{ pathname: "/contact", query: { form: "service" } }} />
+      <CtaBand title={c.cta.title} text={c.cta.text} label={t("common.talkToUs")} href={{ pathname: "/contact", query: { form: "service" } }} media="ctaSimilarProject" />
     </>
   );
 }

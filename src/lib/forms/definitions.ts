@@ -7,7 +7,7 @@
  * no file uploads and no ID/financial fields.
  */
 
-export const FORM_TYPES = ["service", "partnership", "demo", "general", "support", "interest"] as const;
+export const FORM_TYPES = ["service", "partnership", "demo", "general", "support", "interest", "notify"] as const;
 export type FormType = (typeof FORM_TYPES)[number];
 
 export type FieldKind = "text" | "email" | "textarea" | "select" | "checkboxes";
@@ -30,7 +30,10 @@ export const OPTIONS = {
   partnershipType: ["development", "joint-product", "distribution", "integration", "campaign"],
   companySize: ["1-10", "11-50", "51-200", "201-1000", "1000+"],
   modules: ["employees", "attendance", "recruitment", "documents-ocr", "workflows", "reports"],
-  product: ["trumuno-footy", "audio-cleaner"],
+  /** Products with live support. Add "audio-cleaner" when it launches. */
+  product: ["trumuno-footy"],
+  /** Products people can follow before launch ("Quero saber mais"). */
+  interestProduct: ["audio-cleaner", "moambeira", "rh"],
   supportCategory: ["account", "bug", "billing", "feature", "other"],
   interestRole: ["buyer", "traveller", "logistics"],
 } as const;
@@ -54,7 +57,8 @@ export type FieldName =
   | "product"
   | "account"
   | "supportCategory"
-  | "interestRole";
+  | "interestRole"
+  | "interestProduct";
 
 const name: FieldDef = { name: "name", kind: "text", required: true, max: 120, autoComplete: "name", half: true };
 const email: FieldDef = { name: "email", kind: "email", required: true, max: 254, autoComplete: "email", half: true };
@@ -132,6 +136,11 @@ export const FORMS: Record<FormType, FormDef> = {
       { name: "account", kind: "text", required: false, max: 120 },
       { name: "description", kind: "textarea", required: true, max: 3000 },
     ],
+  },
+  // Product updates for products in development ("Quero saber mais")
+  notify: {
+    destinationEnv: "FORM_TO_GENERAL",
+    fields: [name, email, { name: "interestProduct", kind: "select", required: true, options: OPTIONS.interestProduct }],
   },
   // MOAMBEIRA interest list ("Entrar na lista de interesse")
   interest: {

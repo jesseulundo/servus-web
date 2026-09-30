@@ -42,7 +42,12 @@
     "draftNotice": "Provisional content — awaiting approval before publication.",
     "urlPending": "Public link coming soon",
     "talkToUs": "Talk to Servus",
-    "exploreWork": "Explore our work"
+    "exploreWork": "Explore our work",
+    "conceptualImage": "Conceptual image",
+    "visitPartner": "Visit the {name} website",
+    "galleryTitle": "Inside the product",
+    "conceptualIllustration": "Conceptual illustration",
+    "scope": "Scope"
   },
   "footer": {
     "tagline": "Consulting and digital products. Websites, apps, management systems, AI and automation.",
@@ -60,15 +65,17 @@
       "demo": "RH demo",
       "general": "General enquiry",
       "support": "Product support",
-      "interest": "MOAMBEIRA interest list"
+      "interest": "MOAMBEIRA interest list",
+      "notify": "Product updates"
     },
     "intros": {
       "service": "Tell us what you need to solve. We'll reply with questions or a proposed discovery call.",
       "partnership": "Describe the opportunity. The more specific it is, the faster we can assess it.",
       "demo": "Tell us which modules interest you. We'll get in touch when the demo is available.",
       "general": "For anything else.",
-      "support": "For Trumuno Footy or Audio Cleaner users. Never include passwords.",
-      "interest": "Get updates when MOAMBEIRA opens in your market."
+      "support": "For Trumuno Footy users. Never include passwords.",
+      "interest": "Get updates when MOAMBEIRA opens in your market.",
+      "notify": "Leave your email and we'll let you know when the product is available."
     },
     "chooseType": "Request type",
     "required": "required",
@@ -93,7 +100,8 @@
       "product": "Product",
       "account": "Account (email or username)",
       "supportCategory": "Category",
-      "interestRole": "How would you like to take part?"
+      "interestRole": "How would you like to take part?",
+      "interestProduct": "Product you want to follow"
     },
     "hints": {
       "need": "Describe the problem and its business impact. Please don't include documents or sensitive data.",
@@ -152,6 +160,11 @@
         "buyer": "I want to be a buyer",
         "traveller": "I want to be a traveller",
         "logistics": "Logistics partner"
+      },
+      "interestProduct": {
+        "audio-cleaner": "Audio Cleaner",
+        "moambeira": "MOAMBEIRA",
+        "rh": "RH"
       }
     },
     "consent": "I agree that Servus may use this data to respond to my request, in line with the <link>privacy policy</link>.",

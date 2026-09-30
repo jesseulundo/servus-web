@@ -11,6 +11,10 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    // Required to be explicit since Next.js 16. One quality level keeps optimisation cheap on Vercel.
+    qualities: [75],
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

@@ -45,7 +45,7 @@ export const services: Record<ServiceSlug, { icon: ServiceIcon; relatedWork?: Wo
 
 export type ProductCtaTarget =
   | { kind: "external"; url: string | null } // null = URL not confirmed yet → falls back to contact
-  | { kind: "form"; form: "service" | "partnership" | "demo" | "general" | "support" | "interest" };
+  | { kind: "form"; form: "service" | "partnership" | "demo" | "general" | "support" | "interest" | "notify" };
 
 export interface ProductMeta {
   status: ProductStatus;
@@ -62,17 +62,17 @@ export const products: Record<ProductSlug, ProductMeta> = {
     status: "production",
     accent: "#1f7a4d",
     publication: "approved",
-    // TODO(product): confirm public URL
-    primary: { kind: "external", url: process.env.NEXT_PUBLIC_URL_TRUMUNO ?? null },
+    // Official site (visual guide V2: "Incluir CTA Visitar Trumuno Footy").
+    primary: { kind: "external", url: process.env.NEXT_PUBLIC_URL_TRUMUNO || "https://www.trumunofooty.com" },
     secondary: { kind: "form", form: "partnership" },
   },
   "audio-cleaner": {
-    status: "production",
+    // In development, no public page yet (confirmed 30 Sept 2026). Expected live within weeks:
+    // then switch status to "production" and primary to { kind: "external", url }.
+    status: "development",
     accent: "#2f5d8a",
     publication: "approved",
-    // TODO(product): confirm public URL
-    primary: { kind: "external", url: process.env.NEXT_PUBLIC_URL_AUDIO_CLEANER ?? null },
-    secondary: { kind: "form", form: "general" },
+    primary: { kind: "form", form: "notify" },
   },
   moambeira: {
     status: "development",
@@ -90,6 +90,8 @@ export const products: Record<ProductSlug, ProductMeta> = {
 };
 
 export interface WorkMeta {
+  /** Partner's official website. Only set once the partner confirms the URL. */
+  partnerUrl?: string;
   /** TODO(partnerships): every case study needs written partner approval before "approved". */
   publication: Publication;
   /** Only set when confirmed. */
@@ -97,7 +99,8 @@ export interface WorkMeta {
 }
 
 export const work: Record<WorkSlug, WorkMeta> = {
-  ibex: { publication: "draft", country: "JP" },
+  // Official website built by Servus (confirmed 30 Sept 2026).
+  ibex: { publication: "approved", country: "JP", partnerUrl: process.env.NEXT_PUBLIC_URL_IBEX || "https://www.ibex-tokyo.net/en" },
   "fenix-academy": { publication: "draft", country: "AO" },
-  urolundo: { publication: "draft" }, // TODO(partnerships): confirm market
+  urolundo: { publication: "draft", country: "AO" }, // Angola confirmed in visual guide V3
 };

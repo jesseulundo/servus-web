@@ -65,3 +65,27 @@
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * Scroll reveal (visual guide V3). Pure CSS, progressive enhancement: browsers without
+ * scroll-driven animations simply show the content. Disabled for reduced-motion users.
+ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
