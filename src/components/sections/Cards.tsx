@@ -25,7 +25,8 @@ function StretchedLink({ href, children }: { href: React.ComponentProps<typeof L
 }
 
 /** Visual guide V3: image on top, title, short description, 2–3 tags, discreet link. */
-export function ServiceCard({ slug, copy }: { slug: ServiceSlug; copy: ServiceCopy }) {
+export function ServiceCard({ slug, copy, level = 3 }: { slug: ServiceSlug; copy: ServiceCopy; /** 2 when the card list sits directly under the page h1. */ level?: 2 | 3 }) {
+  const Heading = level === 2 ? "h2" : "h3";
   const t = useTranslations("common");
   const Icon = serviceIcons[services[slug].icon];
   return (
@@ -37,9 +38,9 @@ export function ServiceCard({ slug, copy }: { slug: ServiceSlug; copy: ServiceCo
         </span>
       </div>
       <div className="flex flex-1 flex-col p-6 pt-7">
-        <h3 className="text-xl">
+        <Heading className="text-xl">
           <StretchedLink href={{ pathname: "/services/[slug]", params: { slug } }}>{copy.name}</StretchedLink>
-        </h3>
+        </Heading>
         <p className="mt-3 flex-1 leading-relaxed text-ink-muted">{copy.summary}</p>
         <p className="mt-5 flex flex-wrap gap-1.5" aria-label={copy.deliverables.title}>
           {copy.deliverables.items.slice(0, 3).map((d) => (
@@ -86,7 +87,8 @@ const countryNames: Record<string, Record<"JP" | "AO", string>> = {
   en: { JP: "Japan", AO: "Angola" },
 };
 
-export function WorkCard({ slug, copy, locale }: { slug: WorkSlug; copy: WorkCopy; locale: string }) {
+export function WorkCard({ slug, copy, locale, level = 3 }: { slug: WorkSlug; copy: WorkCopy; locale: string; level?: 2 | 3 }) {
+  const Heading = level === 2 ? "h2" : "h3";
   const t = useTranslations("common");
   const meta = work[slug];
   return (
@@ -102,9 +104,9 @@ export function WorkCard({ slug, copy, locale }: { slug: WorkSlug; copy: WorkCop
             </span>
           )}
         </div>
-        <h3 className="text-xl">
+        <Heading className="text-xl">
           <StretchedLink href={{ pathname: "/work/[slug]", params: { slug } }}>{copy.partner}</StretchedLink>
-        </h3>
+        </Heading>
         <p className="mt-2 text-ink">{copy.context}</p>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{copy.responsibility}</p>
         {copy.scope && <ScopeChips items={copy.scope} label={t("scope")} className="mt-4" />}

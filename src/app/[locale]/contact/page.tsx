@@ -57,14 +57,17 @@ export default async function ContactPage({ params, searchParams }: PageProps<"/
           </div>
 
           <aside className="space-y-8 lg:pt-16">
-            <div className="rounded-2xl bg-mist p-6">
-              <h2 className="text-lg">{c.directTitle}</h2>
-              <p className="mt-2 text-ink-muted">{c.directText}</p>
-              <a href={`mailto:${siteConfig.email}`} className="mt-1 inline-flex items-center gap-2 font-semibold text-green-strong underline-offset-4 hover:underline">
-                <Mail aria-hidden className="size-4" />
-                {siteConfig.email}
-              </a>
-            </div>
+            {/* Shown only once a real address is configured (no placeholder emails in public). */}
+            {siteConfig.email && (
+              <div className="rounded-2xl bg-mist p-6">
+                <h2 className="text-lg">{c.directTitle}</h2>
+                <p className="mt-2 text-ink-muted">{c.directText}</p>
+                <a href={`mailto:${siteConfig.email}`} className="mt-1 inline-flex items-center gap-2 font-semibold text-green-strong underline-offset-4 hover:underline">
+                  <Mail aria-hidden className="size-4" />
+                  {siteConfig.email}
+                </a>
+              </div>
+            )}
             <ul className="space-y-3">
               {c.practices.map((p) => (
                 <li key={p} className="flex gap-3 text-ink">

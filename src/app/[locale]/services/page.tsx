@@ -24,7 +24,7 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
       <Section>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICE_SLUGS.map((slug) => (
-            <ServiceCard key={slug} slug={slug} copy={c.services.items[slug]} />
+            <ServiceCard key={slug} slug={slug} copy={c.services.items[slug]} level={2} />
           ))}
         </div>
       </Section>

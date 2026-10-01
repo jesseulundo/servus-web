@@ -11,7 +11,18 @@ import { track } from "@/lib/analytics";
 import { siteConfig } from "@/config/site";
 import { buttonClass } from "@/components/ui/Button";
 
-type Status = { kind: "idle" } | { kind: "sending" } | { kind: "success"; reference: string } | { kind: "error"; code: string };
+type Status =
+  | { kind: "idle" }
+  | { kind: "sending" }
+  | { kind: "success"; reference: string; emailSent: boolean }
+  | { kind: "error"; code: string };
+
+/** One id per submission attempt, so a double click or a retry after a timeout is not delivered twice. */
+function newSubmissionId(): string {
+  return typeof crypto !== "undefined" && "randomUUID" in crypto
+    ? crypto.randomUUID()
+    : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+}
 
 const inputCls =
   "block w-full rounded-lg border border-navy/20 bg-white px-3.5 py-3 text-base text-ink placeholder:text-ink-muted/70 focus:border-green-strong focus:outline-none focus:ring-2 focus:ring-green-strong/30 aria-[invalid=true]:border-orange aria-[invalid=true]:ring-orange/20";
@@ -36,6 +47,7 @@ export function FormRenderer({
   const summaryRef = useRef<HTMLDivElement>(null);
   const startedAt = useRef<number>(0);
   const started = useRef(false);
+  const submissionId = useRef<string | null>(null);
   const [status, setStatus] = useState<Status>({ kind: "idle" });
   const [errors, setErrors] = useState<FieldErrors>({});
 
@@ -59,6 +71,7 @@ export function FormRenderer({
     data[HONEYPOT_FIELD] = fd.get(HONEYPOT_FIELD) ?? "";
     data.elapsedMs = startedAt.current ? Math.round(submittedAt - startedAt.current) : 0;
     data.locale = locale;
+    data.submissionId = submissionId.current;
     return data;
   }
 
@@ -92,6 +105,8 @@ export function FormRenderer({
 
     setErrors({});
     setStatus({ kind: "sending" });
+    // Keep the same id across retries of this attempt; a new one is created after success.
+    submissionId.current ??= newSubmissionId();
     try {
       const res = await fetch(`/api/forms/${type}`, {
         method: "POST",
@@ -101,7 +116,8 @@ export function FormRenderer({
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.ok) {
         track({ name: "form_submit", form: type });
-        setStatus({ kind: "success", reference: json.reference });
+        setStatus({ kind: "success", reference: json.reference, emailSent: Boolean(json.confirmationSent) });
+        submissionId.current = null;
         form.reset();
         return;
       }
@@ -110,8 +126,9 @@ export function FormRenderer({
       track({ name: "form_error", form: type, reason: code });
       setStatus({ kind: "error", code });
     } catch {
+      // fetch() only throws when the request never reached the server (offline, DNS, timeout).
       track({ name: "form_error", form: type, reason: "network" });
-      setStatus({ kind: "error", code: "generic" });
+      setStatus({ kind: "error", code: "network" });
     }
   }
 
@@ -122,6 +139,7 @@ export function FormRenderer({
         <h3 className="mt-4 text-2xl">{t("success.title")}</h3>
         <p className="mt-2 leading-relaxed text-ink">
           {t("success.body", { reference: status.reference, days: t("responseDays") })}
+          {status.emailSent && <> {t("success.emailSent")}</>}
         </p>
         <button
           type="button"
@@ -139,6 +157,11 @@ export function FormRenderer({
   }
 
   const errorCount = Object.keys(errors).length;
+  // Messages that point to the contact email only use it once a real address is configured.
+  const errorText = (code: string) => {
+    if ((code === "unavailable" || code === "generic") && !siteConfig.email) return t(`errors.${code}NoEmail`);
+    return t(`errors.${code as "generic"}`, { email: siteConfig.email ?? "" });
+  };
   const errorMessage = (code?: string) =>
     code ? t(`errors.${code as "required" | "too_long" | "invalid_email" | "invalid_option" | "consent_required"}`) : null;
 
@@ -161,7 +184,7 @@ export function FormRenderer({
         )}
         {status.kind === "error" && (
           <p className="mb-6 rounded-lg border border-orange/40 bg-orange/5 px-4 py-3 font-medium text-navy">
-            {t(`errors.${status.code as "generic"}`, { email: siteConfig.email })}
+            {errorText(status.code)}
           </p>
         )}
       </div>

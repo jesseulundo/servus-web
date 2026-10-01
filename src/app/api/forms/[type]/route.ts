@@ -13,6 +13,25 @@ const WINDOW_MS = 10 * 60 * 1000;
 const requestLimiter = createRateLimiter({ limit: 30, windowMs: WINDOW_MS });
 const deliveryLimiter = createRateLimiter({ limit: 5, windowMs: WINDOW_MS });
 
+/**
+ * Duplicate protection: the browser sends one random submissionId per attempt and reuses it on
+ * retries (double click, flaky network). A repeated id gets the original answer instead of a
+ * second email. In-memory, so best effort per server instance; the id is also in the email/record
+ * so duplicates can be spotted downstream.
+ */
+const IDEMPOTENCY_MS = 15 * 60 * 1000;
+type Outcome = { reference: string; confirmationSent: boolean };
+const seen = new Map<string, { at: number; outcome: Promise<Outcome | null> }>();
+
+function submissionKey(type: string, body: Record<string, unknown>): string | null {
+  const id = body.submissionId;
+  return typeof id === "string" && /^[A-Za-z0-9-]{8,64}$/.test(id) ? `${type}:${id}` : null;
+}
+
+function prune(now: number) {
+  for (const [k, v] of seen) if (now - v.at > IDEMPOTENCY_MS) seen.delete(k);
+}
+
 type ApiError = "unknown_form" | "bad_request" | "too_large" | "forbidden" | "rate_limited" | "retry" | "unavailable" | "invalid";
 
 function fail(error: ApiError, status: number, extra: Record<string, unknown> = {}) {
@@ -68,16 +87,33 @@ export async function POST(req: NextRequest, ctx: RouteContext<"/api/forms/[type
   const parsed = buildSchema(type).safeParse(body);
   if (!parsed.success) return fail("invalid", 422, { fieldErrors: toFieldErrors(parsed.error) });
 
+  const key = submissionKey(type, body);
+  const now = Date.now();
+  prune(now);
+  const previous = key ? seen.get(key) : undefined;
+  if (previous) {
+    const outcome = await previous.outcome;
+    if (outcome) return NextResponse.json({ ok: true, ...outcome, duplicate: true });
+    seen.delete(key!); // the first attempt failed: allow a real retry
+  }
+
   const dl = deliveryLimiter(`${type}:${ip}`);
   if (!dl.allowed) return fail("rate_limited", 429, { retryAfter: Math.ceil((dl.resetAt - Date.now()) / 1000) });
 
   const locale = (routing.locales as readonly string[]).includes(String(body.locale)) ? String(body.locale) : routing.defaultLocale;
   const data = { ...(parsed.data as Record<string, unknown>) };
   delete data.consent; // recorded as consentAt instead
+  if (typeof body.submissionId === "string") data.submissionId = body.submissionId;
   const reference = newReference();
 
-  const result = await deliver({ type, reference, locale, data, consentAt: new Date().toISOString() });
-  if (!result.ok) return fail("unavailable", 503);
-
-  return NextResponse.json({ ok: true, reference });
+  const pending = deliver({ type, reference, locale, data, consentAt: new Date().toISOString() }).then((result) =>
+    result.ok ? { reference, confirmationSent: result.confirmationSent } : null,
+  );
+  if (key) seen.set(key, { at: now, outcome: pending });
+  const outcome = await pending;
+  if (!outcome) {
+    if (key) seen.delete(key);
+    return fail("unavailable", 503);
+  }
+  return NextResponse.json({ ok: true, ...outcome });
 }

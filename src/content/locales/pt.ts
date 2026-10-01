@@ -483,21 +483,12 @@ const pt: SiteContent = {
     directTitle: "Prefere email?",
     directText: "Escreva-nos para",
     practices: [
-      "Confirmamos a receção imediatamente, com uma referência.",
+      "Mostramos uma referência do pedido assim que o envio fica concluído.",
       "Não pedimos documentos nem dados sensíveis no primeiro contacto.",
       "Usamos os seus dados apenas para responder ao pedido.",
     ],
   },
 
-  privacy: {
-    seo: { title: "Política de privacidade", description: "Como a Servus trata os dados enviados através deste website." },
-    title: "Política de privacidade",
-    body: [
-      "Este texto é provisório e será substituído pela política aprovada pelo departamento jurídico antes do lançamento.",
-      "Os dados enviados através dos formulários são usados apenas para responder ao pedido e são encaminhados para a equipa responsável.",
-      "Não pedimos documentos nem dados sensíveis no primeiro contacto. Pode pedir o acesso, a correção ou a eliminação dos seus dados através do contacto geral.",
-    ],
-  },
 };
 
 export default pt;

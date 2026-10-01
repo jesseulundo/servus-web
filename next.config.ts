@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { isIndexingEnabled } from "./src/config/indexing";
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
@@ -16,7 +17,9 @@ const nextConfig: NextConfig = {
     qualities: [75],
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    // Belt and braces with robots.txt + meta robots: a header also covers images, PDFs and API responses.
+    const noindex = isIndexingEnabled() ? [] : [{ key: "X-Robots-Tag", value: "noindex, nofollow" }];
+    return [{ source: "/:path*", headers: [...securityHeaders, ...noindex] }];
   },
 };
 

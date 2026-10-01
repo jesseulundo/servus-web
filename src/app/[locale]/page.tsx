@@ -36,7 +36,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           url: absoluteUrl(locale, "/"),
           logo: `${siteConfig.url}/brand/servus-logo-vertical.png`,
           description: t("meta.siteDescription"),
-          email: siteConfig.email,
+          ...(siteConfig.email ? { email: siteConfig.email } : {}),
           sameAs: Object.values(siteConfig.social).filter(Boolean),
         }}
       />

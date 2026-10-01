@@ -23,7 +23,7 @@ export default async function WorkPage({ params }: PageProps<"/[locale]/work">) 
       <Section>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {WORK_SLUGS.map((slug) => (
-            <WorkCard key={slug} slug={slug} copy={c.items[slug]} locale={locale} />
+            <WorkCard key={slug} slug={slug} copy={c.items[slug]} locale={locale} level={2} />
           ))}
         </div>
       </Section>

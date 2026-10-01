@@ -439,21 +439,12 @@ const en: SiteContent = {
     directTitle: "Prefer email?",
     directText: "Write to us at",
     practices: [
-      "We confirm receipt immediately, with a reference number.",
+      "You get a reference number as soon as your request is sent.",
       "We never ask for documents or sensitive data in a first contact.",
       "We use your data only to respond to your request.",
     ],
   },
 
-  privacy: {
-    seo: { title: "Privacy policy", description: "How Servus handles data submitted through this website." },
-    title: "Privacy policy",
-    body: [
-      "This text is provisional and will be replaced by the policy approved by legal before launch.",
-      "Data submitted through the forms is used only to respond to your request and is routed to the responsible team.",
-      "We never ask for documents or sensitive data in a first contact. You can request access to, correction or deletion of your data through the general contact form.",
-    ],
-  },
 };
 
 export default en;

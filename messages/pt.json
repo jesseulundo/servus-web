@@ -21,6 +21,7 @@
     "partnerships": "Parcerias",
     "contact": "Contactos",
     "privacy": "Privacidade",
+    "terms": "Termos de utilização",
     "cta": "Falar connosco"
   },
   "locale": {
@@ -105,7 +106,7 @@
     },
     "hints": {
       "need": "Descreva o problema e o impacto no negócio. Não inclua documentos nem dados sensíveis.",
-      "budget": "Valores indicativos em USD. Pode deixar em branco.",
+      "budget": "Valores indicativos em dólares americanos (USD) ou o equivalente em kwanzas, ienes ou euros. Pode deixar em branco.",
       "availability": "Ex.: manhãs, fuso horário de Luanda."
     },
     "options": {
@@ -173,7 +174,8 @@
     "success": {
       "title": "Pedido recebido",
       "body": "Obrigado. A sua referência é {reference}. Respondemos normalmente em até {days} dias úteis.",
-      "another": "Enviar outro pedido"
+      "another": "Enviar outro pedido",
+      "emailSent": "Enviámos também uma confirmação para o seu email."
     },
     "responseDays": "2",
     "errors": {
@@ -186,8 +188,18 @@
       "rate_limited": "Recebemos vários pedidos seguidos. Tente novamente dentro de alguns minutos.",
       "retry": "Não foi possível enviar. Aguarde um momento e tente novamente.",
       "unavailable": "O envio está temporariamente indisponível. Escreva-nos para {email}.",
-      "generic": "Algo correu mal. Tente novamente ou escreva-nos para {email}."
+      "generic": "Algo correu mal. Tente novamente ou escreva-nos para {email}.",
+      "unavailableNoEmail": "O envio está temporariamente indisponível. Tente novamente dentro de alguns minutos.",
+      "genericNoEmail": "Algo correu mal. Tente novamente dentro de alguns minutos.",
+      "network": "Não foi possível ligar ao servidor. Verifique a sua ligação à internet e tente novamente. Os dados que escreveu foram mantidos."
     }
+  },
+  "errorPage": {
+    "title": "Algo correu mal",
+    "body": "Não foi possível mostrar esta página. Tente novamente ou volte ao início.",
+    "code": "Código do erro: {code}",
+    "retry": "Tentar novamente",
+    "home": "Voltar ao início"
   },
   "notFound": {
     "title": "Página não encontrada",
