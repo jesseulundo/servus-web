@@ -8,7 +8,7 @@ export default function GlobalError({ retry }: { error: Error & { digest?: strin
   return (
     <html lang="pt">
       <body style={{ margin: 0, fontFamily: "Arial, sans-serif", background: "#061e2d", color: "#fff" }}>
-        <title>Servus</title>
+        <title>ServUS</title>
         <main style={{ minHeight: "100dvh", display: "grid", placeItems: "center", padding: "2rem", textAlign: "center" }}>
           <div style={{ maxWidth: "32rem" }}>
             <h1 style={{ fontSize: "1.75rem", margin: "0 0 0.5rem" }}>Algo correu mal</h1>
@@ -24,7 +24,7 @@ export default function GlobalError({ retry }: { error: Error & { digest?: strin
               {/* A full page load on purpose: the app shell itself failed, so client navigation can't be trusted. */}
               {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
               <a href="/" style={{ color: "#b8db9f" }}>
-                servus · início / home
+                ServUS · início / home
               </a>
             </p>
           </div>

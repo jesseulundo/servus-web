@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Servus design tokens — from the Brand & Website Blueprint v1.0 ("Paleta principal", "Tipografia").
+ * ServUS design tokens — from the Brand & Website Blueprint v1.0 ("Paleta principal", "Tipografia").
  * Use the semantic Tailwind utilities (bg-navy, text-ink, font-display…) instead of raw hex values.
  */
 @theme {

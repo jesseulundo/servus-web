@@ -8,5 +8,5 @@ import horizontalDark from "../../../public/brand/servus-logo-horizontal-dark.pn
  * TODO(brand): replace PNGs with the official SVG masters when available.
  */
 export function Logo({ onDark = false, className = "h-9 w-auto", preload = false }: { onDark?: boolean; className?: string; preload?: boolean }) {
-  return <Image src={onDark ? horizontalDark : horizontal} alt="Servus" className={className} preload={preload} sizes="160px" />;
+  return <Image src={onDark ? horizontalDark : horizontal} alt="ServUS" className={className} preload={preload} sizes="160px" />;
 }

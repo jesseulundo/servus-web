@@ -46,7 +46,7 @@ function privacyPt(): LegalContent {
   const contact = value(siteConfig.privacyEmail, "[A CONFIRMAR: email de privacidade]");
   return {
     title: "Política de privacidade",
-    seoDescription: "Como a Servus trata os dados pessoais enviados através deste website.",
+    seoDescription: "Como a ServUS trata os dados pessoais enviados através deste website.",
     updatedLabel: "Última atualização",
     draftNotice:
       "Versão em revisão jurídica. Este texto ainda não foi aprovado e pode mudar antes da publicação definitiva.",
@@ -57,7 +57,7 @@ function privacyPt(): LegalContent {
         id: "responsavel",
         heading: "1. Quem é o responsável pelo tratamento",
         blocks: [
-          `O responsável pelo tratamento dos dados é ${entity}, com sede em ${address}, ${registration} ("Servus", "nós").`,
+          `O responsável pelo tratamento dos dados é ${entity}, com sede em ${address}, ${registration} ("ServUS", "nós").`,
           `Para qualquer questão sobre privacidade ou para exercer os seus direitos, escreva para ${contact}.`,
         ],
       },
@@ -110,13 +110,13 @@ function privacyPt(): LegalContent {
         id: "subcontratantes",
         heading: "5. Com quem partilhamos os dados",
         blocks: [
-          "Os pedidos são encaminhados apenas para a equipa Servus responsável. Usamos os seguintes prestadores de serviços (subcontratantes), que tratam os dados por nossa conta e segundo as nossas instruções:",
+          "Os pedidos são encaminhados apenas para a equipa ServUS responsável. Usamos os seguintes prestadores de serviços (subcontratantes), que tratam os dados por nossa conta e segundo as nossas instruções:",
           {
             list: [
               "Vercel Inc. (EUA): alojamento do website e registos técnicos.",
               "Resend (EUA): envio dos emails gerados pelos formulários.",
-              "[A CONFIRMAR: fornecedor das caixas de email da Servus, por exemplo Zoho, Proton, Google Workspace ou Microsoft 365].",
-              "[A CONFIRMAR: ferramenta de registo de pedidos ou CRM, se for usada].",
+              "Zoho Corporation: caixas de correio eletrónico da ServUS, onde os pedidos são recebidos e respondidos [A CONFIRMAR: região do centro de dados].",
+              "Google (Google Sheets): registo interno dos pedidos recebidos, com acesso limitado à equipa ServUS.",
             ],
           },
           "Este website não usa ferramentas de análise (analytics) nem cookies de publicidade. Se isso mudar, esta política será atualizada antes da ativação.",
@@ -127,7 +127,7 @@ function privacyPt(): LegalContent {
         id: "transferencias",
         heading: "6. Transferências internacionais",
         blocks: [
-          "A Servus trabalha com clientes em Angola, no Japão e noutros países, e alguns dos nossos prestadores estão nos Estados Unidos. Por isso, os seus dados podem ser tratados fora do país onde se encontra.",
+          "A ServUS trabalha com clientes em Angola, no Japão e noutros países, e alguns dos nossos prestadores estão nos Estados Unidos. Por isso, os seus dados podem ser tratados fora do país onde se encontra.",
           "Nesses casos, recorremos a prestadores que oferecem garantias adequadas, como cláusulas contratuais-tipo ou mecanismos equivalentes previstos na lei aplicável [A CONFIRMAR pelo jurídico].",
         ],
       },
@@ -154,7 +154,7 @@ function privacyPt(): LegalContent {
         id: "saude",
         heading: "8. Dados de saúde e projetos de parceiros",
         blocks: [
-          "Os formulários deste website não se destinam a recolher dados de saúde. Os projetos de parceiros apresentados no website (por exemplo, Urolundo) têm as suas próprias políticas de privacidade. Se algum serviço operado pela Servus vier a tratar dados de saúde, será informado em separado, antes da recolha, sobre o fundamento e as garantias adicionais aplicáveis.",
+          "Os formulários deste website não se destinam a recolher dados de saúde. Os projetos de parceiros apresentados no website (por exemplo, Urolundo) têm as suas próprias políticas de privacidade. Se algum serviço operado pela ServUS vier a tratar dados de saúde, será informado em separado, antes da recolha, sobre o fundamento e as garantias adicionais aplicáveis.",
         ],
       },
       {
@@ -190,7 +190,7 @@ function privacyEn(): LegalContent {
   const contact = value(siteConfig.privacyEmail, "[TO CONFIRM: privacy email]");
   return {
     title: "Privacy policy",
-    seoDescription: "How Servus handles the personal data sent through this website.",
+    seoDescription: "How ServUS handles the personal data sent through this website.",
     updatedLabel: "Last updated",
     draftNotice: "Under legal review. This text has not been approved yet and may change before final publication.",
     intro:
@@ -200,7 +200,7 @@ function privacyEn(): LegalContent {
         id: "controller",
         heading: "1. Who is responsible for your data",
         blocks: [
-          `The data controller is ${entity}, registered at ${address}, ${registration} ("Servus", "we").`,
+          `The data controller is ${entity}, registered at ${address}, ${registration} ("ServUS", "we").`,
           `For any privacy question, or to exercise your rights, write to ${contact}.`,
         ],
       },
@@ -253,13 +253,13 @@ function privacyEn(): LegalContent {
         id: "processors",
         heading: "5. Who we share the data with",
         blocks: [
-          "Requests are only forwarded to the responsible Servus team. We use the following service providers (processors), who handle data on our behalf and under our instructions:",
+          "Requests are only forwarded to the responsible ServUS team. We use the following service providers (processors), who handle data on our behalf and under our instructions:",
           {
             list: [
               "Vercel Inc. (USA): website hosting and technical logs.",
               "Resend (USA): sending the emails generated by the forms.",
-              "[TO CONFIRM: Servus mailbox provider, e.g. Zoho, Proton, Google Workspace or Microsoft 365].",
-              "[TO CONFIRM: request-tracking tool or CRM, if used].",
+              "Zoho Corporation: ServUS mailboxes, where requests are received and answered [TO CONFIRM: data-centre region].",
+              "Google (Google Sheets): internal record of the requests received, accessible only to the ServUS team.",
             ],
           },
           "This website uses no analytics tools and no advertising cookies. If that changes, this policy will be updated before they are switched on.",
@@ -270,7 +270,7 @@ function privacyEn(): LegalContent {
         id: "transfers",
         heading: "6. International transfers",
         blocks: [
-          "Servus works with clients in Angola, Japan and other countries, and some of our providers are in the United States. Your data may therefore be processed outside the country where you are.",
+          "ServUS works with clients in Angola, Japan and other countries, and some of our providers are in the United States. Your data may therefore be processed outside the country where you are.",
           "In those cases we use providers that offer appropriate safeguards, such as standard contractual clauses or equivalent mechanisms under the applicable law [TO CONFIRM by legal].",
         ],
       },
@@ -297,7 +297,7 @@ function privacyEn(): LegalContent {
         id: "health",
         heading: "8. Health data and partner projects",
         blocks: [
-          "The forms on this website are not intended to collect health data. Partner projects shown on the website (for example, Urolundo) have their own privacy policies. If a service operated by Servus ever processes health data, you will be informed separately, before collection, of the legal basis and the additional safeguards that apply.",
+          "The forms on this website are not intended to collect health data. Partner projects shown on the website (for example, Urolundo) have their own privacy policies. If a service operated by ServUS ever processes health data, you will be informed separately, before collection, of the legal basis and the additional safeguards that apply.",
         ],
       },
       {
@@ -328,7 +328,7 @@ function termsPt(): LegalContent {
   const entity = value(siteConfig.legal.name, "[A CONFIRMAR: nome da entidade legal]");
   return {
     title: "Termos de utilização",
-    seoDescription: "Condições de utilização do website da Servus.",
+    seoDescription: "Condições de utilização do website da ServUS.",
     updatedLabel: "Última atualização",
     draftNotice: "Versão em revisão jurídica. Este texto ainda não foi aprovado e pode mudar antes da publicação definitiva.",
     intro: `Estes termos regulam a utilização deste website, operado por ${entity}. Ao usar o website, aceita estes termos.`,
@@ -337,14 +337,14 @@ function termsPt(): LegalContent {
         id: "objeto",
         heading: "1. Finalidade do website",
         blocks: [
-          "Este website apresenta a Servus, os seus serviços, produtos e trabalhos, e permite enviar pedidos de contacto. A informação é geral e não constitui uma proposta contratual. Qualquer serviço é regulado por um contrato próprio.",
+          "Este website apresenta a ServUS, os seus serviços, produtos e trabalhos, e permite enviar pedidos de contacto. A informação é geral e não constitui uma proposta contratual. Qualquer serviço é regulado por um contrato próprio.",
         ],
       },
       {
         id: "conteudos",
         heading: "2. Conteúdos e imagens",
         blocks: [
-          "Os textos, o logótipo e os restantes conteúdos pertencem à Servus ou aos respetivos titulares e não podem ser reutilizados sem autorização.",
+          "Os textos, o logótipo e os restantes conteúdos pertencem à ServUS ou aos respetivos titulares e não podem ser reutilizados sem autorização.",
           "As imagens assinaladas como \"Imagem conceptual\" ou \"Ilustração conceptual\" são ilustrativas e não representam clientes, pessoas ou locais reais.",
           "Os nomes e marcas de parceiros e produtos de terceiros pertencem aos respetivos titulares e são apresentados com a sua autorização [A CONFIRMAR].",
         ],
@@ -353,7 +353,7 @@ function termsPt(): LegalContent {
         id: "ligacoes",
         heading: "3. Ligações para outros websites",
         blocks: [
-          "O website inclui ligações para websites de produtos e parceiros (por exemplo, Trumuno Footy e IBEX). Esses websites têm os seus próprios termos e políticas, pelos quais a Servus não é responsável.",
+          "O website inclui ligações para websites de produtos e parceiros (por exemplo, Trumuno Footy e IBEX). Esses websites têm os seus próprios termos e políticas, pelos quais a ServUS não é responsável.",
         ],
       },
       {
@@ -367,7 +367,7 @@ function termsPt(): LegalContent {
         id: "responsabilidade",
         heading: "5. Disponibilidade e responsabilidade",
         blocks: [
-          "Procuramos manter a informação correta e o website disponível, mas não garantimos que esteja sempre livre de erros ou interrupções. Na medida permitida por lei, a Servus não é responsável por danos resultantes da utilização do website.",
+          "Procuramos manter a informação correta e o website disponível, mas não garantimos que esteja sempre livre de erros ou interrupções. Na medida permitida por lei, a ServUS não é responsável por danos resultantes da utilização do website.",
         ],
       },
       {
@@ -378,7 +378,11 @@ function termsPt(): LegalContent {
       {
         id: "lei",
         heading: "7. Lei aplicável",
-        blocks: ["Estes termos regem-se pela lei [A CONFIRMAR: Angola / Japão], sendo competentes os tribunais de [A CONFIRMAR]."],
+        blocks: [
+          "Se utiliza o website a partir de Angola, estes termos regem-se pela lei angolana e são competentes os tribunais de Luanda [A CONFIRMAR].",
+          "Se utiliza o website a partir do Japão, estes termos regem-se pela lei japonesa e é competente o Tribunal Distrital de Tóquio [A CONFIRMAR].",
+          "Nos restantes casos, aplica-se a lei [A CONFIRMAR: Angola ou Japão]. Em qualquer caso, mantém os direitos que a lei de proteção do consumidor do seu país lhe garante e que não possam ser afastados por contrato.",
+        ],
       },
     ],
   };
@@ -388,7 +392,7 @@ function termsEn(): LegalContent {
   const entity = value(siteConfig.legal.name, "[TO CONFIRM: legal entity name]");
   return {
     title: "Terms of use",
-    seoDescription: "Conditions for using the Servus website.",
+    seoDescription: "Conditions for using the ServUS website.",
     updatedLabel: "Last updated",
     draftNotice: "Under legal review. This text has not been approved yet and may change before final publication.",
     intro: `These terms govern the use of this website, operated by ${entity}. By using the website, you accept these terms.`,
@@ -397,14 +401,14 @@ function termsEn(): LegalContent {
         id: "purpose",
         heading: "1. Purpose of the website",
         blocks: [
-          "This website presents Servus, its services, products and work, and lets you send contact requests. The information is general and is not a contractual offer. Any service is governed by its own contract.",
+          "This website presents ServUS, its services, products and work, and lets you send contact requests. The information is general and is not a contractual offer. Any service is governed by its own contract.",
         ],
       },
       {
         id: "content",
         heading: "2. Content and images",
         blocks: [
-          "The text, logo and other content belong to Servus or their respective owners and may not be reused without permission.",
+          "The text, logo and other content belong to ServUS or their respective owners and may not be reused without permission.",
           "Images labelled \"Conceptual image\" or \"Conceptual illustration\" are illustrative and do not show real clients, people or places.",
           "Partner and third-party product names and brands belong to their owners and are shown with their permission [TO CONFIRM].",
         ],
@@ -413,7 +417,7 @@ function termsEn(): LegalContent {
         id: "links",
         heading: "3. Links to other websites",
         blocks: [
-          "The website links to product and partner websites (for example, Trumuno Footy and IBEX). Those websites have their own terms and policies, for which Servus is not responsible.",
+          "The website links to product and partner websites (for example, Trumuno Footy and IBEX). Those websites have their own terms and policies, for which ServUS is not responsible.",
         ],
       },
       {
@@ -425,7 +429,7 @@ function termsEn(): LegalContent {
         id: "liability",
         heading: "5. Availability and liability",
         blocks: [
-          "We aim to keep the information accurate and the website available, but we do not guarantee it will always be free of errors or interruptions. To the extent permitted by law, Servus is not liable for damage resulting from the use of the website.",
+          "We aim to keep the information accurate and the website available, but we do not guarantee it will always be free of errors or interruptions. To the extent permitted by law, ServUS is not liable for damage resulting from the use of the website.",
         ],
       },
       {
@@ -436,7 +440,11 @@ function termsEn(): LegalContent {
       {
         id: "law",
         heading: "7. Governing law",
-        blocks: ["These terms are governed by the law of [TO CONFIRM: Angola / Japan], and the courts of [TO CONFIRM] have jurisdiction."],
+        blocks: [
+          "If you use the website from Angola, these terms are governed by Angolan law and the courts of Luanda have jurisdiction [TO CONFIRM].",
+          "If you use the website from Japan, these terms are governed by Japanese law and the Tokyo District Court has jurisdiction [TO CONFIRM].",
+          "In all other cases, the law of [TO CONFIRM: Angola or Japan] applies. In every case, you keep any rights that consumer protection law in your country gives you and that cannot be excluded by contract.",
+        ],
       },
     ],
   };

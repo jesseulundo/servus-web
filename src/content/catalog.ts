@@ -99,7 +99,7 @@ export interface WorkMeta {
 }
 
 export const work: Record<WorkSlug, WorkMeta> = {
-  // Official website built by Servus (confirmed 30 Sept 2026).
+  // Official website built by ServUS (confirmed 30 Sept 2026).
   ibex: { publication: "approved", country: "JP", partnerUrl: process.env.NEXT_PUBLIC_URL_IBEX || "https://www.ibex-tokyo.net/en" },
   "fenix-academy": { publication: "draft", country: "AO" },
   urolundo: { publication: "draft", country: "AO" }, // Angola confirmed in visual guide V3
