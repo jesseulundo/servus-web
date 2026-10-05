@@ -21,6 +21,7 @@
     "partnerships": "Partnerships",
     "contact": "Contact",
     "privacy": "Privacy",
+    "terms": "Terms of use",
     "cta": "Talk to us"
   },
   "locale": {
@@ -105,7 +106,7 @@
     },
     "hints": {
       "need": "Describe the problem and its business impact. Please don't include documents or sensitive data.",
-      "budget": "Indicative amounts in USD. You can leave this blank.",
+      "budget": "Indicative amounts in US dollars (USD) or the equivalent in kwanza, yen or euros. You can leave this blank.",
       "availability": "E.g. mornings, Tokyo time zone."
     },
     "options": {
@@ -173,7 +174,8 @@
     "success": {
       "title": "Request received",
       "body": "Thank you. Your reference is {reference}. We usually reply within {days} business days.",
-      "another": "Send another request"
+      "another": "Send another request",
+      "emailSent": "We've also sent a confirmation to your email."
     },
     "responseDays": "2",
     "errors": {
@@ -186,8 +188,18 @@
       "rate_limited": "We received several requests in a row. Please try again in a few minutes.",
       "retry": "We couldn't send that. Wait a moment and try again.",
       "unavailable": "Sending is temporarily unavailable. Email us at {email}.",
-      "generic": "Something went wrong. Try again or email us at {email}."
+      "generic": "Something went wrong. Try again or email us at {email}.",
+      "unavailableNoEmail": "Sending is temporarily unavailable. Please try again in a few minutes.",
+      "genericNoEmail": "Something went wrong. Please try again in a few minutes.",
+      "network": "We couldn't reach the server. Check your internet connection and try again. What you typed has been kept."
     }
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "body": "We couldn't show this page. Try again or go back to the home page.",
+    "code": "Error code: {code}",
+    "retry": "Try again",
+    "home": "Back to home"
   },
   "notFound": {
     "title": "Page not found",

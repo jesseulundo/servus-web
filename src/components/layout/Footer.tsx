@@ -49,9 +49,11 @@ export function Footer() {
             <h2 className="mb-3 text-sm font-semibold text-white">{t("footer.contact")}</h2>
             <ul className="space-y-2 text-sm">
               <li><Link className={linkCls} href="/contact">{t("nav.contact")}</Link></li>
-              <li><a className={linkCls} href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+              {siteConfig.email && (
+                <li><a className={linkCls} href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+              )}
               {social.map(([name, url]) => (
-                <li key={name}><a className={`${linkCls} capitalize`} href={url} rel="me noopener" target="_blank">{name}</a></li>
+                <li key={name}><a className={`${linkCls} capitalize`} href={url} rel="me noopener noreferrer" target="_blank">{name}</a></li>
               ))}
             </ul>
           </div>
@@ -59,13 +61,15 @@ export function Footer() {
             <h2 className="mb-3 text-sm font-semibold text-white">{t("footer.legal")}</h2>
             <ul className="space-y-2 text-sm">
               <li><Link className={linkCls} href="/privacy">{t("nav.privacy")}</Link></li>
+              <li><Link className={linkCls} href="/terms">{t("nav.terms")}</Link></li>
             </ul>
           </div>
         </nav>
       </div>
       <div className="border-t border-white/10">
         <p className="mx-auto w-full max-w-site px-4 py-5 text-xs text-white/60 sm:px-6 lg:px-8">
-          © {new Date().getFullYear()} {siteConfig.legalName}. {t("footer.rights")}
+          © {new Date().getFullYear()} {siteConfig.legal.name || siteConfig.name}. {t("footer.rights")}
+          {siteConfig.legal.registration && <span className="ml-2">{siteConfig.legal.registration}</span>}
         </p>
       </div>
     </footer>

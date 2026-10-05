@@ -30,12 +30,16 @@ export function MediaImage({
   const locale = useLocale() as Locale;
   const t = useTranslations("common");
   const m: Media = media[id];
+  const label =
+    m.kind === "conceptual" || m.kind === "illustration" ? t(m.kind === "illustration" ? "conceptualIllustration" : "conceptualImage") : null;
+  // Screen readers hear the label once, as part of the alt text; the visual badge is hidden from them.
+  const alt = label && m.alt[locale] ? `${label}: ${m.alt[locale]}` : m.alt[locale];
 
   return (
     <div className={`relative overflow-hidden bg-navy-800 ${className}`}>
       <Image
         src={m.src}
-        alt={m.alt[locale]}
+        alt={alt}
         fill
         sizes={sizes}
         placeholder="blur"
@@ -43,11 +47,12 @@ export function MediaImage({
         className={`object-cover ${imgClassName ?? ""}`}
         style={imgClassName ? undefined : { objectPosition: m.position }}
       />
-      {(m.kind === "conceptual" || m.kind === "illustration") && (
+      {label && (
         <span
+          aria-hidden
           className={`absolute ${labelPosition === "top-left" ? "top-3 left-3" : labelPosition === "bottom-right" ? "bottom-3 right-3" : "bottom-3 left-3"} pointer-events-none z-10 rounded-full bg-navy/80 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm`}
         >
-          {t(m.kind === "illustration" ? "conceptualIllustration" : "conceptualImage")}
+          {label}
         </span>
       )}
     </div>

@@ -83,8 +83,10 @@ const budget: FieldDef = { name: "budget", kind: "select", required: false, opti
 
 export interface FormDef {
   fields: readonly FieldDef[];
-  /** Env var holding the destination inbox (blueprint column "Destino"). */
+  /** Env var holding the destination inbox (blueprint column "Destino"). Comma-separate several addresses. */
   destinationEnv: string;
+  /** Used when destinationEnv is empty (e.g. waiting lists fall back to the general inbox). */
+  fallbackEnv?: string;
 }
 
 export const FORMS: Record<FormType, FormDef> = {
@@ -139,12 +141,14 @@ export const FORMS: Record<FormType, FormDef> = {
   },
   // Product updates for products in development ("Quero saber mais")
   notify: {
-    destinationEnv: "FORM_TO_GENERAL",
+    destinationEnv: "FORM_TO_WAITLIST",
+    fallbackEnv: "FORM_TO_GENERAL",
     fields: [name, email, { name: "interestProduct", kind: "select", required: true, options: OPTIONS.interestProduct }],
   },
   // MOAMBEIRA interest list ("Entrar na lista de interesse")
   interest: {
-    destinationEnv: "FORM_TO_GENERAL",
+    destinationEnv: "FORM_TO_WAITLIST",
+    fallbackEnv: "FORM_TO_GENERAL",
     fields: [name, email, country(true), { name: "interestRole", kind: "select", required: true, options: OPTIONS.interestRole, half: true }],
   },
 };

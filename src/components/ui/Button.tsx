@@ -52,7 +52,7 @@ export function ExternalButton({
   className?: string;
 }) {
   return (
-    <a href={href} target="_blank" rel="noopener" className={buttonClass(variant, className)}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={buttonClass(variant, className)}>
       {children}
       <ExternalLink aria-hidden className="size-4" />
     </a>

@@ -136,10 +136,4 @@ export interface SiteContent {
     directText: string;
     practices: string[];
   };
-  privacy: {
-    seo: SeoCopy;
-    title: string;
-    /** TODO(legal): replace with the approved privacy policy. */
-    body: string[];
-  };
 }
