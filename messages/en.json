@@ -1,7 +1,7 @@
 {
   "meta": {
-    "siteTitle": "Servus — Technology applied to your business's real problems",
-    "siteDescription": "Servus builds digital products and provides consulting, development and management of technology solutions."
+    "siteTitle": "ServUS — Technology applied to your business's real problems",
+    "siteDescription": "ServUS builds digital products and provides consulting, development and management of technology solutions."
   },
   "a11y": {
     "skipToContent": "Skip to content",
@@ -9,7 +9,7 @@
     "footerNav": "Footer navigation",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "homeLink": "Servus — home",
+    "homeLink": "ServUS — home",
     "breadcrumb": "Breadcrumb"
   },
   "nav": {
@@ -32,7 +32,7 @@
   "common": {
     "learnMore": "Learn more",
     "seeAll": "See all",
-    "servusProduct": "A Servus product",
+    "servusProduct": "A ServUS product",
     "partnerProject": "Partner project",
     "status": {
       "production": "Live",
@@ -42,7 +42,7 @@
     "developmentNotice": "This product is in development and is not yet available as a service.",
     "draftNotice": "Provisional content — awaiting approval before publication.",
     "urlPending": "Public link coming soon",
-    "talkToUs": "Talk to Servus",
+    "talkToUs": "Talk to ServUS",
     "exploreWork": "Explore our work",
     "conceptualImage": "Conceptual image",
     "visitPartner": "Visit the {name} website",
@@ -168,7 +168,7 @@
         "rh": "RH"
       }
     },
-    "consent": "I agree that Servus may use this data to respond to my request, in line with the <link>privacy policy</link>.",
+    "consent": "I agree that ServUS may use this data to respond to my request, in line with the <link>privacy policy</link>.",
     "submit": "Send request",
     "sending": "Sending…",
     "success": {

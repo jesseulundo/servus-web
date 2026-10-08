@@ -55,8 +55,23 @@ async function post(url: string, body: unknown, headers: Record<string, string> 
       body: JSON.stringify(body),
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
-    if (!res.ok) console.error(`[forms] POST ${new URL(url).host} → HTTP ${res.status}`);
-    return res.ok;
+    if (!res.ok) {
+      console.error(`[forms] POST ${new URL(url).host} → HTTP ${res.status}`);
+      return false;
+    }
+    // Some receivers (e.g. Google Apps Script) always answer HTTP 200; they report failure as {"ok": false}.
+    const answer = await res.text().catch(() => "");
+    if (/^\s*\{/.test(answer)) {
+      try {
+        if (JSON.parse(answer).ok === false) {
+          console.error(`[forms] POST ${new URL(url).host} → rejected by receiver`);
+          return false;
+        }
+      } catch {
+        /* not JSON: fine */
+      }
+    }
+    return true;
   } catch (err) {
     console.error(`[forms] POST ${new URL(url).host} failed: ${(err as Error).name}`);
     return false;

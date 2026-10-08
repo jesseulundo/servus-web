@@ -1,7 +1,7 @@
 import type { SiteContent } from "../types";
 
 /**
- * Portuguese copy. Source: "Servus Guia de Marca e Website" v1.0 (Setembro de 2026).
+ * Portuguese copy. Source: "ServUS Guia de Marca e Website" v1.0 (Setembro de 2026).
  * Text marked with "Rascunho" / draft in the catalog awaits approval by the owners
  * listed in the blueprint checklist.
  */
@@ -10,23 +10,23 @@ const pt: SiteContent = {
     seo: {
       title: "Tecnologia aplicada aos problemas reais do seu negócio",
       description:
-        "A Servus cria produtos digitais e ajuda empresas a desenvolver websites, aplicações, sistemas de gestão e soluções com inteligência artificial.",
+        "A ServUS cria produtos digitais e ajuda empresas a desenvolver websites, aplicações, sistemas de gestão e soluções com inteligência artificial.",
     },
     hero: {
       title: "Tecnologia aplicada aos problemas reais do seu negócio",
-      text: "A Servus cria produtos digitais e ajuda empresas a desenvolver websites, aplicações, sistemas de gestão e soluções com inteligência artificial.",
+      text: "A ServUS cria produtos digitais e ajuda empresas a desenvolver websites, aplicações, sistemas de gestão e soluções com inteligência artificial.",
     },
     capabilities: {
       title: "Do desafio à solução digital",
       intro: "Consultoria, desenvolvimento, automação, integrações e manutenção — da primeira conversa à implementação e evolução da plataforma.",
     },
     products: {
-      title: "Produtos Servus",
+      title: "Produtos ServUS",
       intro: "Construímos e operamos os nossos próprios produtos. É a melhor prova de que sabemos levar uma ideia até à produção.",
     },
     work: {
       title: "Soluções para os nossos parceiros",
-      intro: "Projetos desenvolvidos ou geridos pela Servus para outras organizações. Cada caso indica o parceiro e a nossa contribuição.",
+      intro: "Projetos desenvolvidos ou geridos pela ServUS para outras organizações. Cada caso indica o parceiro e a nossa contribuição.",
     },
     method: {
       title: "Como trabalhamos",
@@ -59,11 +59,11 @@ const pt: SiteContent = {
   company: {
     seo: {
       title: "Empresa",
-      description: "A Servus une conhecimento técnico e visão de negócio: consultoria, desenvolvimento e produtos digitais próprios.",
+      description: "A ServUS une conhecimento técnico e visão de negócio: consultoria, desenvolvimento e produtos digitais próprios.",
     },
     title: "Conhecimento técnico com visão de negócio",
     intro:
-      "A Servus nasceu para unir conhecimento técnico e visão de negócio. Desenvolvemos produtos próprios e colaboramos com organizações que precisam de construir, modernizar ou manter soluções digitais.",
+      "A ServUS nasceu para unir conhecimento técnico e visão de negócio. Desenvolvemos produtos próprios e colaboramos com organizações que precisam de construir, modernizar ou manter soluções digitais.",
     blocks: [
       { title: "Quem somos", text: "Uma empresa de tecnologia focada em consultoria, desenvolvimento e produtos digitais." },
       {
@@ -145,7 +145,7 @@ const pt: SiteContent = {
           },
         },
         faq: [
-          { q: "A consultoria obriga a desenvolver com a Servus?", a: "Não. As recomendações são suas e podem ser executadas por qualquer equipa." },
+          { q: "A consultoria obriga a desenvolver com a ServUS?", a: "Não. As recomendações são suas e podem ser executadas por qualquer equipa." },
         ],
         cta: { title: "Precisa de decidir o próximo passo técnico?", text: "Marque uma conversa de descoberta." },
       },
@@ -301,7 +301,7 @@ const pt: SiteContent = {
             items: ["Acesso ao código e ao alojamento", "Histórico de problemas conhecidos", "Um contacto para prioridades"],
           },
         },
-        faq: [{ q: "Mantêm sistemas que não foram feitos pela Servus?", a: "Sim, depois de uma avaliação inicial ao código e ao alojamento." }],
+        faq: [{ q: "Mantêm sistemas que não foram feitos pela ServUS?", a: "Sim, depois de uma avaliação inicial ao código e ao alojamento." }],
         cta: { title: "O seu sistema precisa de cuidados?", text: "Diga-nos o que está em produção e o que o preocupa." },
       },
     },
@@ -310,9 +310,9 @@ const pt: SiteContent = {
   products: {
     seo: {
       title: "Produtos",
-      description: "Produtos digitais da Servus: Trumuno Footy em produção; Audio Cleaner, MOAMBEIRA e RH em desenvolvimento.",
+      description: "Produtos digitais da ServUS: Trumuno Footy em produção; Audio Cleaner, MOAMBEIRA e RH em desenvolvimento.",
     },
-    title: "Produtos Servus",
+    title: "Produtos ServUS",
     intro:
       "Produtos que criamos e operamos. Cada um mantém a sua própria identidade. Os produtos em desenvolvimento ainda não estão disponíveis como serviço.",
     items: {
@@ -403,15 +403,15 @@ const pt: SiteContent = {
   work: {
     seo: {
       title: "Trabalhos",
-      description: "Projetos desenvolvidos ou geridos pela Servus para parceiros: IBEX, Fenix Academy e Urolundo.",
+      description: "Projetos desenvolvidos ou geridos pela ServUS para parceiros: IBEX, Fenix Academy e Urolundo.",
     },
     title: "Soluções para os nossos parceiros",
     intro:
-      "Experiência da Servus em projetos de outras organizações. Os negócios pertencem aos parceiros; cada caso indica o desafio e a nossa contribuição.",
+      "Experiência da ServUS em projetos de outras organizações. Os negócios pertencem aos parceiros; cada caso indica o desafio e a nossa contribuição.",
     labels: {
       context: "Contexto do parceiro",
       challenge: "Problema ou oportunidade",
-      responsibility: "Responsabilidade da Servus",
+      responsibility: "Responsabilidade da ServUS",
       solution: "Solução implementada",
       status: "Estado atual",
       outcome: "Resultado ou próximo passo",
@@ -421,17 +421,17 @@ const pt: SiteContent = {
       ibex: {
         partner: "IBEX",
         context: "Clube de hip hop em Roppongi, Tóquio.",
-        seo: { title: "IBEX — Trabalho Servus", description: "Presença digital para um clube de hip hop em Roppongi, Tóquio." },
+        seo: { title: "IBEX — Trabalho ServUS", description: "Presença digital para um clube de hip hop em Roppongi, Tóquio." },
         challenge: "Uma presença digital própria para um público local e internacional, em inglês e japonês.",
         responsibility: "Website oficial do clube: programação de eventos, notícias, aluguer do espaço, galeria e contactos.",
-        solution: "Website bilingue (inglês e japonês) em ibex-tokyo.net, desenvolvido pela Servus.",
+        solution: "Website bilingue (inglês e japonês) em ibex-tokyo.net, desenvolvido pela ServUS.",
         status: "Em produção.",
         outcome: "O website está publicado e pode ser visitado.",
       },
       "fenix-academy": {
         partner: "Fenix Academy",
         context: "Academia com cursos certificados em Angola.",
-        seo: { title: "Fenix Academy — Trabalho Servus", description: "Plataforma institucional e catálogo de cursos para uma academia em Angola." },
+        seo: { title: "Fenix Academy — Trabalho ServUS", description: "Plataforma institucional e catálogo de cursos para uma academia em Angola." },
         challenge: "A confirmar com o parceiro.",
         responsibility: "Plataforma institucional, catálogo de cursos, inscrições e gestão digital, conforme o âmbito aprovado.",
         solution: "A detalhar após aprovação do parceiro.",
@@ -442,7 +442,7 @@ const pt: SiteContent = {
         partner: "Urolundo",
         context: "Clínica de urologia em Angola.",
         seo: {
-          title: "Urolundo — Trabalho Servus",
+          title: "Urolundo — Trabalho ServUS",
           description: "Plataforma de gestão clínica para uma clínica de urologia em Angola.",
         },
         challenge: "Organizar horários, operações clínicas e o acompanhamento de atividades de pacientes e médicos.",
@@ -459,7 +459,7 @@ const pt: SiteContent = {
   partnerships: {
     seo: {
       title: "Parcerias",
-      description: "Modelos de colaboração com a Servus: desenvolvimento, produto conjunto, distribuição, integração e campanhas.",
+      description: "Modelos de colaboração com a ServUS: desenvolvimento, produto conjunto, distribuição, integração e campanhas.",
     },
     title: "Vamos construir a oportunidade certa em conjunto",
     intro:
@@ -469,7 +469,7 @@ const pt: SiteContent = {
     models: [
       { name: "Desenvolvimento para parceiro", example: "Website, aplicação ou sistema de gestão.", nextAction: "Pedido de reunião" },
       { name: "Produto conjunto", example: "Solução criada com conhecimento ou acesso do parceiro.", nextAction: "Proposta de parceria" },
-      { name: "Distribuição e vendas", example: "Parceiro comercializa um produto Servus num mercado.", nextAction: "Conversa comercial" },
+      { name: "Distribuição e vendas", example: "Parceiro comercializa um produto ServUS num mercado.", nextAction: "Conversa comercial" },
       { name: "Integração tecnológica", example: "Serviço externo integrado num produto ou projeto.", nextAction: "Avaliação técnica" },
       { name: "Campanha ou comunidade", example: "Ações com Trumuno Footy, eventos ou criadores.", nextAction: "Briefing de campanha" },
     ],
@@ -478,7 +478,7 @@ const pt: SiteContent = {
 
   contact: {
     seo: { title: "Contactos", description: "Peça um serviço, proponha uma parceria, solicite uma demonstração ou fale connosco." },
-    title: "Fale com a Servus",
+    title: "Fale com a ServUS",
     intro: "Escolha o tipo de pedido para chegar diretamente à pessoa certa.",
     directTitle: "Prefere email?",
     directText: "Escreva-nos para",

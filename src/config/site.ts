@@ -12,8 +12,8 @@ function publicEmail(value: string | undefined): string | null {
 }
 
 export const siteConfig = {
-  /** TODO(brand): blueprint text uses "Servus", logo reads "ServUS". Confirm official spelling. */
-  name: "Servus",
+  /** Official spelling (confirmed 5 Oct 2026): ServUS — "Services Ulundo and Sampaio". */
+  name: "ServUS",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
   /**
    * Public contact address (footer, contact page, error messages, structured data).

@@ -9,23 +9,23 @@ const en: SiteContent = {
   home: {
     seo: {
       title: "Technology applied to your business's real problems",
-      description: "Servus builds digital products and helps companies develop websites, apps, management systems and AI-powered solutions.",
+      description: "ServUS builds digital products and helps companies develop websites, apps, management systems and AI-powered solutions.",
     },
     hero: {
       title: "Technology applied to your business's real problems",
-      text: "Servus builds digital products and helps companies develop websites, apps, management systems and AI-powered solutions.",
+      text: "ServUS builds digital products and helps companies develop websites, apps, management systems and AI-powered solutions.",
     },
     capabilities: {
       title: "From challenge to digital solution",
       intro: "Consulting, development, automation, integrations and maintenance — from the first conversation to launch and beyond.",
     },
     products: {
-      title: "Servus products",
+      title: "ServUS products",
       intro: "We build and run our own products. It's the best proof that we know how to take an idea all the way to production.",
     },
     work: {
       title: "Solutions for our partners",
-      intro: "Projects Servus has built or manages for other organisations. Each case names the partner and our contribution.",
+      intro: "Projects ServUS has built or manages for other organisations. Each case names the partner and our contribution.",
     },
     method: {
       title: "How we work",
@@ -56,10 +56,10 @@ const en: SiteContent = {
   },
 
   company: {
-    seo: { title: "Company", description: "Servus combines technical know-how with business vision: consulting, development and our own digital products." },
+    seo: { title: "Company", description: "ServUS combines technical know-how with business vision: consulting, development and our own digital products." },
     title: "Technical know-how with business vision",
     intro:
-      "Servus was founded to bring technical know-how and business vision together. We build our own products and work with organisations that need to build, modernise or maintain digital solutions.",
+      "ServUS was founded to bring technical know-how and business vision together. We build our own products and work with organisations that need to build, modernise or maintain digital solutions.",
     blocks: [
       { title: "Who we are", text: "A technology company focused on consulting, development and digital products." },
       { title: "What sets us apart", text: "Hands-on experience with our own products, close collaboration and the ability to work across markets." },
@@ -125,7 +125,7 @@ const en: SiteContent = {
             items: ["A decision-maker on your side", "Access to documentation and key people", "Time to validate the findings"],
           },
         },
-        faq: [{ q: "Does consulting commit us to building with Servus?", a: "No. The recommendations are yours and any team can carry them out." }],
+        faq: [{ q: "Does consulting commit us to building with ServUS?", a: "No. The recommendations are yours and any team can carry them out." }],
         cta: { title: "Need to decide your next technical step?", text: "Book a discovery call." },
       },
       websites: {
@@ -271,7 +271,7 @@ const en: SiteContent = {
             items: ["Access to code and hosting", "History of known issues", "A contact for priorities"],
           },
         },
-        faq: [{ q: "Do you maintain systems Servus didn't build?", a: "Yes, after an initial review of the code and hosting." }],
+        faq: [{ q: "Do you maintain systems ServUS didn't build?", a: "Yes, after an initial review of the code and hosting." }],
         cta: { title: "Does your system need attention?", text: "Tell us what's in production and what worries you." },
       },
     },
@@ -280,9 +280,9 @@ const en: SiteContent = {
   products: {
     seo: {
       title: "Products",
-      description: "Servus digital products: Trumuno Footy is live; Audio Cleaner, MOAMBEIRA and RH are in development.",
+      description: "ServUS digital products: Trumuno Footy is live; Audio Cleaner, MOAMBEIRA and RH are in development.",
     },
-    title: "Servus products",
+    title: "ServUS products",
     intro: "Products we build and run. Each keeps its own identity. Products in development are not yet available as a service.",
     items: {
       "trumuno-footy": {
@@ -368,13 +368,13 @@ const en: SiteContent = {
   },
 
   work: {
-    seo: { title: "Work", description: "Projects Servus has built or manages for partners: IBEX, Fenix Academy and Urolundo." },
+    seo: { title: "Work", description: "Projects ServUS has built or manages for partners: IBEX, Fenix Academy and Urolundo." },
     title: "Solutions for our partners",
-    intro: "Servus's experience on other organisations' projects. The businesses belong to our partners; each case shows the challenge and our contribution.",
+    intro: "ServUS's experience on other organisations' projects. The businesses belong to our partners; each case shows the challenge and our contribution.",
     labels: {
       context: "Partner context",
       challenge: "Problem or opportunity",
-      responsibility: "Servus's responsibility",
+      responsibility: "ServUS's responsibility",
       solution: "Solution delivered",
       status: "Current status",
       outcome: "Result or next step",
@@ -384,17 +384,17 @@ const en: SiteContent = {
       ibex: {
         partner: "IBEX",
         context: "Hip hop club in Roppongi, Tokyo.",
-        seo: { title: "IBEX — Servus work", description: "Digital presence for a hip hop club in Roppongi, Tokyo." },
+        seo: { title: "IBEX — ServUS work", description: "Digital presence for a hip hop club in Roppongi, Tokyo." },
         challenge: "A digital presence of its own for a local and international audience, in English and Japanese.",
         responsibility: "The club's official website: event schedule, news, venue rental, gallery and contacts.",
-        solution: "A bilingual website (English and Japanese) at ibex-tokyo.net, built by Servus.",
+        solution: "A bilingual website (English and Japanese) at ibex-tokyo.net, built by ServUS.",
         status: "Live.",
         outcome: "The website is published and open to visitors.",
       },
       "fenix-academy": {
         partner: "Fenix Academy",
         context: "Academy offering certified courses in Angola.",
-        seo: { title: "Fenix Academy — Servus work", description: "Institutional platform and course catalogue for an academy in Angola." },
+        seo: { title: "Fenix Academy — ServUS work", description: "Institutional platform and course catalogue for an academy in Angola." },
         challenge: "To be confirmed with the partner.",
         responsibility: "Institutional platform, course catalogue, enrolments and digital management, according to the approved scope.",
         solution: "Details to follow once approved by the partner.",
@@ -404,7 +404,7 @@ const en: SiteContent = {
       urolundo: {
         partner: "Urolundo",
         context: "Urology clinic in Angola.",
-        seo: { title: "Urolundo — Servus work", description: "A clinic management platform for a urology clinic in Angola." },
+        seo: { title: "Urolundo — ServUS work", description: "A clinic management platform for a urology clinic in Angola." },
         challenge: "Organising schedules, clinical operations and tracking patient and doctor activity.",
         responsibility: "A clinic management platform that organises schedules, doctors' activities and operational patient follow-up.",
         scope: ["Scheduling", "Doctor management", "Patient follow-up"],
@@ -416,7 +416,7 @@ const en: SiteContent = {
   },
 
   partnerships: {
-    seo: { title: "Partnerships", description: "Ways to work with Servus: development, joint products, distribution, integration and campaigns." },
+    seo: { title: "Partnerships", description: "Ways to work with ServUS: development, joint products, distribution, integration and campaigns." },
     title: "Let's build the right opportunity together",
     intro:
       "We work with companies that bring technology, distribution, market knowledge, investment, content or access to a community. Pick the model closest to your idea.",
@@ -425,7 +425,7 @@ const en: SiteContent = {
     models: [
       { name: "Development for a partner", example: "Website, app or management system.", nextAction: "Meeting request" },
       { name: "Joint product", example: "A solution built with the partner's knowledge or access.", nextAction: "Partnership proposal" },
-      { name: "Distribution and sales", example: "A partner sells a Servus product in a market.", nextAction: "Commercial conversation" },
+      { name: "Distribution and sales", example: "A partner sells a ServUS product in a market.", nextAction: "Commercial conversation" },
       { name: "Technology integration", example: "An external service integrated into a product or project.", nextAction: "Technical assessment" },
       { name: "Campaign or community", example: "Activations with Trumuno Footy, events or creators.", nextAction: "Campaign brief" },
     ],
@@ -434,7 +434,7 @@ const en: SiteContent = {
 
   contact: {
     seo: { title: "Contact", description: "Request a service, propose a partnership, ask for a demo or get in touch." },
-    title: "Talk to Servus",
+    title: "Talk to ServUS",
     intro: "Choose the request type to reach the right person directly.",
     directTitle: "Prefer email?",
     directText: "Write to us at",

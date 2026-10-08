@@ -12,12 +12,12 @@ const COPY = {
     lines: (ref: string, days: string) => [
       "Olá,",
       "",
-      `Obrigado por contactar a Servus. Recebemos o seu pedido com a referência ${ref}.`,
+      `Obrigado por contactar a ServUS. Recebemos o seu pedido com a referência ${ref}.`,
       `Respondemos normalmente em até ${days} dias úteis.`,
       "",
       "Se não fez este pedido, pode ignorar esta mensagem.",
       "",
-      "Equipa Servus",
+      "Equipa ServUS",
     ],
   },
   en: {
@@ -25,12 +25,12 @@ const COPY = {
     lines: (ref: string, days: string) => [
       "Hello,",
       "",
-      `Thank you for contacting Servus. We've received your request with the reference ${ref}.`,
+      `Thank you for contacting ServUS. We've received your request with the reference ${ref}.`,
       `We usually reply within ${days} business days.`,
       "",
       "If you didn't make this request, you can ignore this message.",
       "",
-      "The Servus team",
+      "The ServUS team",
     ],
   },
 } as const;

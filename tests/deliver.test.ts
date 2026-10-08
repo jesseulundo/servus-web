@@ -85,6 +85,16 @@ describe("deliver", () => {
   });
 });
 
+describe("record receivers that always answer 200", () => {
+  it('treats {"ok": false} as a failure', async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => new Response('{"ok":false,"error":"forbidden"}', { status: 200 })));
+    expect(await deliver(sub, { NODE_ENV: "production", FORM_WEBHOOK_URL: "https://script.test/exec?key=x" })).toEqual({
+      ok: false,
+      reason: "provider_error",
+    });
+  });
+});
+
 describe("confirmation email", () => {
   it("is localized", () => {
     expect(confirmationEmail("en", "SV-1").subject).toContain("received");
