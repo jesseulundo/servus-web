@@ -13,6 +13,7 @@ import "@fontsource-variable/inter";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
 import "../globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -54,6 +55,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           </main>
           <Footer />
           <StickyContact />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
