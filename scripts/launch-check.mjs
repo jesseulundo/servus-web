@@ -6,8 +6,12 @@
  *   runs automatically before every `npm run build` (prebuild)
  *
  * When SITE_INDEXING=on in a production build, missing P0 items FAIL the build, so the site
- * can never be opened to search engines with placeholder email, log-only forms or an
- * unapproved privacy policy. Otherwise problems are printed as warnings and the build continues.
+ * can never be opened to search engines with placeholder email or log-only forms.
+ * Otherwise problems are printed as warnings and the build continues.
+ *
+ * Decision (Jesse, 13 Oct 2026): indexing may go live before legal sign-off. The legal entity
+ * and the privacy-policy approval are therefore warnings, not blockers; the privacy page stays
+ * labelled as a draft and out of search results until `legalStatus.privacy.approved` is true.
  */
 import { existsSync, readFileSync } from "node:fs";
 
@@ -42,9 +46,9 @@ if (email) {
   for (const k of ["FORM_TO_SERVICE", "FORM_TO_PARTNERSHIP", "FORM_TO_DEMO", "FORM_TO_GENERAL", "FORM_TO_SUPPORT"])
     need(!placeholder(env[k]), `${k} (form recipient) is empty or a placeholder`);
 }
-need(!placeholder(env.NEXT_PUBLIC_LEGAL_NAME), "NEXT_PUBLIC_LEGAL_NAME (responsible legal entity) is empty");
+nice(!placeholder(env.NEXT_PUBLIC_LEGAL_NAME), "NEXT_PUBLIC_LEGAL_NAME (responsible legal entity) is empty");
 need(!placeholder(env.NEXT_PUBLIC_PRIVACY_EMAIL ?? env.NEXT_PUBLIC_CONTACT_EMAIL), "No privacy contact email");
-need(approved("privacy"), "Privacy policy not approved (src/content/legal.ts → legalStatus.privacy.approved)");
+nice(approved("privacy"), "Privacy policy not approved yet (src/content/legal.ts → legalStatus.privacy.approved); page stays a draft");
 
 nice(env.FORM_WEBHOOK_URL, "FORM_WEBHOOK_URL not set — no durable record/CRM copy of enquiries besides email");
 nice(env.ALERT_WEBHOOK_URL, "ALERT_WEBHOOK_URL not set — delivery failures only appear in Vercel logs");

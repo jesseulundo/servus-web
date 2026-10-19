@@ -119,7 +119,8 @@ function privacyPt(): LegalContent {
               "Google (Google Sheets): registo interno dos pedidos recebidos, com acesso limitado à equipa ServUS.",
             ],
           },
-          "Este website não usa ferramentas de análise (analytics) nem cookies de publicidade. Se isso mudar, esta política será atualizada antes da ativação.",
+          "Vercel Inc. (EUA): estatísticas de visitas agregadas e anónimas (Vercel Web Analytics), sem cookies e sem identificar visitantes individuais. São registados, por exemplo, a página vista, o país, o tipo de dispositivo e o website de origem.",
+          "Não usamos cookies de publicidade nem ferramentas que sigam visitantes entre websites. Se isso mudar, esta política será atualizada antes da ativação.",
           "Podemos divulgar dados quando a lei o exigir.",
         ],
       },
@@ -162,7 +163,7 @@ function privacyPt(): LegalContent {
         heading: "9. Cookies",
         blocks: [
           "Usamos apenas um cookie funcional, NEXT_LOCALE, que guarda o idioma escolhido. Não contém dados pessoais e é apagado quando fecha o navegador. Por ser necessário ao funcionamento do website, não exige consentimento.",
-          "Não usamos cookies de análise nem de publicidade.",
+          "Não usamos cookies de análise nem de publicidade. As estatísticas de visitas (ver secção 5) funcionam sem cookies.",
         ],
       },
       {
@@ -262,7 +263,8 @@ function privacyEn(): LegalContent {
               "Google (Google Sheets): internal record of the requests received, accessible only to the ServUS team.",
             ],
           },
-          "This website uses no analytics tools and no advertising cookies. If that changes, this policy will be updated before they are switched on.",
+          "Vercel Inc. (USA): aggregated, anonymous visit statistics (Vercel Web Analytics), without cookies and without identifying individual visitors. It records, for example, the page viewed, the country, the device type and the referring website.",
+          "We use no advertising cookies and no tools that follow visitors across websites. If that changes, this policy will be updated before they are switched on.",
           "We may disclose data where required by law.",
         ],
       },
@@ -305,7 +307,7 @@ function privacyEn(): LegalContent {
         heading: "9. Cookies",
         blocks: [
           "We only use one functional cookie, NEXT_LOCALE, which remembers your chosen language. It contains no personal data and is deleted when you close your browser. Because it is needed for the website to work, it does not require consent.",
-          "We use no analytics or advertising cookies.",
+          "We use no analytics or advertising cookies. Visit statistics (see section 5) work without cookies.",
         ],
       },
       {
